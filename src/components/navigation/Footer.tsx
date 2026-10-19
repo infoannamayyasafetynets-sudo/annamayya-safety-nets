@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2 mt-1 text-xs text-[#D1D5DB]">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#F57C00] shrink-0" />
+                <Clock className="w-4 h-4 text-[#F57C00] shrink-0" aria-hidden="true" />
                 <span>Punctual Visits: Mon - Sun (8:00 AM - 8:00 PM)</span>
               </div>
               <div className="flex items-center gap-2">
@@ -49,9 +49,9 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-[#D1D5DB] hover:text-[#F57C00] transition-colors duration-200 flex items-center gap-2 group"
+                    className="text-[#D1D5DB] hover:text-[#F57C00] transition-colors duration-200 flex items-center gap-2 group py-0.5"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#F57C00] transition-colors" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#F57C00] transition-colors" aria-hidden="true" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -78,9 +78,9 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-[#D1D5DB] hover:text-[#F57C00] transition-colors duration-200 flex items-center gap-2 group"
+                    className="text-[#D1D5DB] hover:text-[#F57C00] transition-colors duration-200 flex items-center gap-2 group py-0.5"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#F57C00] transition-colors" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#F57C00] transition-colors" aria-hidden="true" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -95,7 +95,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-sm text-[#D1D5DB]">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <span className="font-bold text-white block">Office Address</span>
                   <span className="block text-xs leading-relaxed text-[#D1D5DB] mt-1">
@@ -107,13 +107,13 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-[11px] font-bold text-[#F57C00] hover:underline mt-1"
                   >
-                    <Navigation className="w-3 h-3" />
+                    <Navigation className="w-3 h-3" aria-hidden="true" />
                     <span>View on Google Maps</span>
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" />
+                <Phone className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" aria-hidden="true" />
                 <div className="flex flex-col gap-0.5">
                   <span className="font-bold text-white block">Phone Support</span>
                   <a
@@ -126,7 +126,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" />
+                <Mail className="w-4 h-4 text-[#F57C00] shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <span className="font-bold text-white block">Email Inquiries</span>
                   <a href="mailto:info.annamayyasafetynets@gmail.com" className="hover:text-[#F57C00] transition-colors text-xs">
@@ -141,7 +141,7 @@ export default function Footer() {
         {/* North Bangalore Primary Localities Local SEO Footer Links */}
         <div className="py-6 border-t border-[#323842] flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2 text-white font-bold shrink-0">
-            <MapPin className="w-4 h-4 text-[#F57C00]" />
+            <MapPin className="w-4 h-4 text-[#F57C00]" aria-hidden="true" />
             <span>Serving All Bangalore (Base: Mathikere):</span>
           </div>
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-3.5 gap-y-2 text-[#D1D5DB]">

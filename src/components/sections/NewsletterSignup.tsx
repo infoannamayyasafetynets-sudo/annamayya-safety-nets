@@ -75,9 +75,9 @@ export default function NewsletterSignup() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-6 flex flex-col items-center gap-3 text-success-green"
+              className="text-center py-6 flex flex-col items-center gap-3 text-emerald-400"
             >
-              <CheckCircle2 className="w-10 h-10" />
+              <CheckCircle2 className="w-10 h-10" aria-hidden="true" />
               <div>
                 <span className="text-sm font-bold text-white block">Subscribed Successfully!</span>
                 <span className="text-[10px] text-slate-400 block mt-1">Thank you for joining.</span>
@@ -86,8 +86,8 @@ export default function NewsletterSignup() {
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4.5" noValidate>
               {status === "error" && (
-                <div className="p-3 bg-[#FFE8CC]0/10 border border-red-500/20 text-red-400 text-[11px] rounded-lg flex items-center gap-2" role="alert">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
+                <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] rounded-lg flex items-center gap-2" role="alert">
+                  <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Error signing up. Please try again.</span>
                 </div>
               )}
@@ -138,9 +138,9 @@ export default function NewsletterSignup() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full bg-[#F57C00] hover:bg-accent-hover text-white text-xs font-bold py-3 rounded-lg shadow-md cursor-pointer transition-colors flex items-center justify-center gap-1.5 focus:outline-hidden focus:ring-1 focus:ring-[#F57C00]"
+                className="w-full bg-[#F57C00] hover:bg-[#E65100] text-white text-xs font-bold py-3 rounded-lg shadow-md cursor-pointer transition-colors flex items-center justify-center gap-1.5 focus:outline-hidden focus:ring-1 focus:ring-[#F57C00]"
               >
-                <Mail className="w-3.5 h-3.5" />
+                <Mail className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>{status === "loading" ? "Subscribing..." : "Join Newsletter"}</span>
               </button>
             </form>

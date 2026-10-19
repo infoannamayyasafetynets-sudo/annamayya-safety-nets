@@ -157,15 +157,16 @@ export default function ContactForm() {
                 className="text-center py-10 flex flex-col items-center justify-center gap-4"
               >
                 <div className="p-4 bg-emerald-50 rounded-full text-success-green">
-                  <CheckCircle2 className="w-16 h-16" />
+                  <CheckCircle2 className="w-16 h-16" aria-hidden="true" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">Booking Request Received!</h3>
                 <p className="text-slate-500 text-sm max-w-md leading-relaxed">
                   Thank you for reaching out to Annamayya Safety Nets. Our team will contact you shortly to schedule your free site measurement and share quotation details.
                 </p>
                 <button
+                  type="button"
                   onClick={() => setStatus("idle")}
-                  className="mt-4 bg-primary-700 hover:bg-accent-orange hover:bg-accent-hover text-white text-xs font-bold px-6 py-3 rounded-full cursor-pointer transition-colors"
+                  className="mt-4 bg-[#23272F] hover:bg-[#F57C00] text-white text-xs font-bold px-6 py-3 rounded-full cursor-pointer transition-colors"
                 >
                   Submit Another Request
                 </button>
@@ -174,14 +175,16 @@ export default function ContactForm() {
               <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6" noValidate>
                 {status === "error" && (
                   <div className="p-4 bg-red-50 border border-red-100 text-red-700 rounded-xl text-xs flex items-center gap-3" role="alert">
-                    <AlertCircle className="w-5 h-5 shrink-0" />
+                    <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
                     <span>Something went wrong. Please call us directly or try submitting again.</span>
                   </div>
                 )}
 
                 {/* Honeypot Spam Shield Input - Hidden from human eyes */}
+                <label htmlFor="botfield" className="sr-only">Leave this field empty</label>
                 <input
                   type="text"
+                  id="botfield"
                   autoComplete="off"
                   {...register("botfield")}
                   className="hidden"
@@ -288,7 +291,7 @@ export default function ContactForm() {
                         ))}
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <svg className="fill-current h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                           <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                         </svg>
                       </div>
@@ -327,7 +330,7 @@ export default function ContactForm() {
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4" aria-hidden="true" />
                       <span>Request Free Site Visit & Quote</span>
                     </>
                   )}

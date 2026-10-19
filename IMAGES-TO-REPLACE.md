@@ -7,7 +7,7 @@ As real photo shoots of Annamayya Safety Nets installations across Mathikere and
 | :--- | :--- | :--- |
 | Hero Balcony Net | `/images/hero/annamayya-balcony-safety-net-mathikere-1.webp` | High-rise balcony installation near Mathikere / Yeshwanthpur |
 | Child Safety Net | `/images/services/annamayya-child-safety-net-mathikere.webp` | Toddler protection mesh on 5th+ floor balcony |
-| Pigeon Netting | `/images/services/annamayya-pigeon-net-mathikere.webp` | Clean balcony bird-deterrence netting [CONFIRM WITH CLIENT] |
+| Pigeon Netting | `/images/services/annamayya-pigeon-net-mathikere.webp` | Clean balcony bird-deterrence netting |
 | Balcony Invisible Grill | `/images/services/annamayya-balcony-invisible-grill-mathikere.webp` | SS316 marine invisible wire grill overlooking city view |
 | Window Invisible Grill | `/images/services/annamayya-window-grill-mathikere.webp` | Vertical cable arrangement on bedroom French window |
 | Ceiling Cloth Hangers | `/images/services/annamayya-ceiling-cloth-hanger-mathikere.webp` | Stainless 6-pipe pulley system hoisted to ceiling |

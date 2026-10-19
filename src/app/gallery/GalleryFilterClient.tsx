@@ -210,10 +210,12 @@ export default function GalleryFilterClient() {
   return (
     <div className="flex flex-col gap-10">
       {/* Category Filter Toolbar */}
-      <div className="flex flex-wrap gap-2.5 bg-white p-5 rounded-3xl border border-slate-200 shadow-xs justify-center sm:justify-start">
+      <div className="flex flex-wrap gap-2.5 bg-white p-5 rounded-3xl border border-slate-200 shadow-xs justify-center sm:justify-start" role="group" aria-label="Photo categories">
         {filters.map((filter) => (
           <button
             key={filter.value}
+            type="button"
+            aria-pressed={activeFilter === filter.value}
             onClick={() => setActiveFilter(filter.value)}
             className={`text-xs sm:text-sm font-bold px-4.5 py-2.5 rounded-full cursor-pointer transition-all ${
               activeFilter === filter.value
@@ -229,10 +231,12 @@ export default function GalleryFilterClient() {
       {/* Masonry Grid */}
       <MasonryGrid>
         {filteredPhotos.map((photo, index) => (
-          <div
+          <button
             key={index}
+            type="button"
             onClick={() => setPhotoIndex(index)}
-            className="group relative bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-md border border-slate-200 transition-all duration-300 cursor-pointer w-full"
+            aria-label={`View photo of ${photo.serviceName} in ${photo.location}`}
+            className="group relative bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-md border border-slate-200 transition-all duration-300 cursor-pointer w-full text-left focus:outline-none focus:ring-2 focus:ring-[#F57C00]"
           >
             {/* Image */}
             <div className="relative w-full h-64 md:h-80 bg-slate-200">
@@ -242,14 +246,13 @@ export default function GalleryFilterClient() {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-103"
-              
-              loading="lazy"
-              quality={75}
-            />
+                loading="lazy"
+                quality={75}
+              />
               {/* Zoom hover glass overlay */}
               <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="bg-white/90 p-3 rounded-full text-slate-800 backdrop-blur-xs scale-90 group-hover:scale-100 transition-all duration-300">
-                  <Maximize2 className="w-4.5 h-4.5" />
+                  <Maximize2 className="w-4.5 h-4.5" aria-hidden="true" />
                 </div>
               </div>
             </div>
@@ -257,7 +260,7 @@ export default function GalleryFilterClient() {
             {/* Meta Footer */}
             <div className="p-5 border-t border-slate-100">
               <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-500 font-bold uppercase mb-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#F57C00]" />
+                <MapPin className="w-3.5 h-3.5 text-[#F57C00]" aria-hidden="true" />
                 <span>{photo.location}</span>
               </div>
               <h3 className="text-sm sm:text-base font-bold text-slate-800 mb-1 group-hover:text-[#F57C00] transition-colors">
@@ -267,7 +270,7 @@ export default function GalleryFilterClient() {
                 {photo.description}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </MasonryGrid>
 

@@ -33,7 +33,7 @@ export const CITIES_BANGALORE = [
 export const ALL_ACTIVE_SERVICES = [
   "Balcony Safety Nets",
   "Child Safety Nets",
-  "Pigeon Safety Nets [CONFIRM WITH CLIENT]",
+  "Pigeon Safety Nets",
   "Balcony Invisible Grills",
   "Window Invisible Grills",
   "Ceiling Cloth Drying Hangers",

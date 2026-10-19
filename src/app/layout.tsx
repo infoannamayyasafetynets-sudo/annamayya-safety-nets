@@ -101,14 +101,33 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Favicon SVG tag */}
+        {/* Favicon SVG tag & Manifest */}
         <link rel="icon" type="image/svg+xml" href="/icon.svg" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* LCP Hero Image Preload for 0ms render delay */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/main-images/annamayya-safetynets-mathikere.webp"
+          fetchPriority="high"
+          type="image/webp"
+        />
+
         {/* Search Console verification: [PENDING CLIENT VERIFICATION TOKEN] */}
       </head>
       <body
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-white text-slate-900 flex flex-col min-h-screen selection:bg-[#F57C00] selection:text-white`}
       >
+        {/* WCAG 2.1 AA Skip to Content Landmark */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#23272F] focus:text-white focus:rounded-xl focus:shadow-2xl font-bold text-sm"
+        >
+          Skip to main content
+        </a>
+
         {/* LocalBusiness JSON-LD Schema */}
         <Script
           id="local-business-schema"
@@ -119,7 +138,7 @@ export default function RootLayout({
         {/* Google Analytics 4 (GA4): [PENDING CLIENT GA4 ID] */}
 
         <Navbar />
-        <main className="flex-grow pt-[96px] sm:pt-[102px] lg:pt-[108px]">{children}</main>
+        <main id="main-content" className="flex-grow pt-[96px] sm:pt-[102px] lg:pt-[108px]">{children}</main>
         <Footer />
         <FloatingCTA />
         <SideFloatingContact />

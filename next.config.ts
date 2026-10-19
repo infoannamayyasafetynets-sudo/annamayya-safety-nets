@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  compress: true,
+  poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
   images: {
     // Device widths for responsive srcset generation
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
@@ -36,10 +41,15 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
         ],
       },
+
       {
-        // Static images: cache 1 year, immutable (versioned by Next.js _next/image)
+        // Static images: cache 1 year, immutable
         source: "/images/(.*)",
         headers: [
           {

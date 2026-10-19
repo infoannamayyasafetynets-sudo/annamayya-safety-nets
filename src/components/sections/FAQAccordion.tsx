@@ -68,12 +68,18 @@ export default function FAQAccordion() {
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const questionId = `faq-question-${index}`;
+            const answerId = `faq-answer-${index}`;
             return (
               <div
                 key={index}
                 className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs transition-all"
               >
                 <button
+                  type="button"
+                  id={questionId}
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-[#23272F] transition-colors cursor-pointer"
                 >
@@ -82,10 +88,16 @@ export default function FAQAccordion() {
                     className={`w-5 h-5 text-[#F57C00] shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
+                    aria-hidden="true"
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  <div
+                    id={answerId}
+                    role="region"
+                    aria-labelledby={questionId}
+                    className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
                     {faq.answer}
                   </div>
                 )}
@@ -106,8 +118,9 @@ export default function FAQAccordion() {
             <a
               href="tel:+916281048162"
               className="inline-flex items-center gap-2 bg-[#F57C00] hover:bg-[#E65100] text-white px-5 py-3 rounded-full text-xs font-black shadow-md transition-colors"
+              aria-label="Call Annamayya Safety Nets directly at +91 62810 48162"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" aria-hidden="true" />
               <span>+91 62810 48162</span>
             </a>
             <a
@@ -115,8 +128,9 @@ export default function FAQAccordion() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full text-xs font-black shadow-md transition-colors"
+              aria-label="Ask questions on WhatsApp with Annamayya Safety Nets"
             >
-              <MessageSquare className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4" aria-hidden="true" />
               <span>WhatsApp</span>
             </a>
           </div>

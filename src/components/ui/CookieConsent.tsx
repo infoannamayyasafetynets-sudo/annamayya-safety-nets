@@ -8,7 +8,7 @@ export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("ram_cookie_consent");
+    const consent = localStorage.getItem("annamayya_cookie_consent");
     if (!consent) {
       const timer = setTimeout(() => setShowBanner(true), 1500);
       return () => clearTimeout(timer);
@@ -16,12 +16,12 @@ export default function CookieConsent() {
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem("ram_cookie_consent", "accepted");
+    localStorage.setItem("annamayya_cookie_consent", "accepted");
     setShowBanner(false);
   };
 
   const declineCookies = () => {
-    localStorage.setItem("ram_cookie_consent", "declined");
+    localStorage.setItem("annamayya_cookie_consent", "declined");
     setShowBanner(false);
   };
 
@@ -30,11 +30,11 @@ export default function CookieConsent() {
   return (
     <div
       role="region"
-      aria-label="Cookie consent"
+      aria-label="Cookie consent banner"
       className="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-md z-50 bg-[#23272F] text-white p-5 rounded-2xl shadow-2xl border border-[#323842] backdrop-blur-md animate-in fade-in slide-in-from-bottom-5 duration-300"
     >
       <div className="flex items-start gap-3">
-        <ShieldCheck className="w-5 h-5 text-[#F57C00] shrink-0 mt-0.5" />
+        <ShieldCheck className="w-5 h-5 text-[#F57C00] shrink-0 mt-0.5" aria-hidden="true" />
         <div className="text-xs text-slate-300 leading-relaxed">
           <p className="font-bold text-white mb-1">Privacy &amp; Cookie Policy</p>
           <p>
@@ -49,12 +49,14 @@ export default function CookieConsent() {
       </div>
       <div className="flex items-center justify-end gap-2.5 mt-4 pt-3 border-t border-[#323842]">
         <button
+          type="button"
           onClick={declineCookies}
           className="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
         >
           Decline
         </button>
         <button
+          type="button"
           onClick={acceptCookies}
           className="px-4 py-1.5 rounded-lg text-xs font-black bg-[#F57C00] hover:bg-[#FF9800] text-slate-950 transition-colors shadow-sm cursor-pointer"
         >

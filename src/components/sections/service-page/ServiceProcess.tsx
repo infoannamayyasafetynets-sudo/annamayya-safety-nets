@@ -262,6 +262,8 @@ export function ServiceFAQs({ faqs, serviceName }: FAQsProps) {
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openId === idx;
+            const questionId = `service-faq-btn-${idx}`;
+            const answerId = `service-faq-ans-${idx}`;
             return (
               <div
                 key={idx}
@@ -270,22 +272,28 @@ export function ServiceFAQs({ faqs, serviceName }: FAQsProps) {
                 }`}
               >
                 <button
+                  type="button"
+                  id={questionId}
                   onClick={() => toggleFAQ(idx)}
                   aria-expanded={isOpen}
+                  aria-controls={answerId}
                   className="w-full flex items-center justify-between p-5 text-left cursor-pointer focus:outline-hidden"
                 >
                   <span className="flex items-start gap-3.5 text-sm sm:text-base font-bold text-slate-800 hover:text-[#F57C00] transition-colors">
-                    <HelpCircle className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                    <HelpCircle className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" aria-hidden="true" />
                     <span>{faq.question}</span>
                   </span>
                   <span className="p-1.5 bg-slate-100 rounded-lg text-slate-500 shrink-0 ml-4">
-                    {isOpen ? <Minus className="w-4 h-4 text-[#F57C00]" /> : <Plus className="w-4 h-4" />}
+                    {isOpen ? <Minus className="w-4 h-4 text-[#F57C00]" aria-hidden="true" /> : <Plus className="w-4 h-4" aria-hidden="true" />}
                   </span>
                 </button>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={answerId}
+                      role="region"
+                      aria-labelledby={questionId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

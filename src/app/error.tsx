@@ -19,7 +19,7 @@ export default function ErrorBoundary({
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 text-center select-none">
       <div className="max-w-md bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md flex flex-col items-center gap-6">
         <div className="p-4 bg-[#FFE8CC] text-[#F57C00] rounded-full shadow-xs border border-orange-100/50">
-          <Wrench className="w-12 h-12" />
+          <Wrench className="w-12 h-12" aria-hidden="true" />
         </div>
 
         <div className="flex flex-col gap-2">
@@ -31,10 +31,11 @@ export default function ErrorBoundary({
 
         <div className="flex flex-col gap-3 w-full">
           <button
+            type="button"
             onClick={() => reset()}
             className="w-full flex items-center justify-center gap-2 bg-[#F57C00] hover:bg-accent-hover text-white font-bold py-3.5 rounded-xl transition-all shadow-xs text-xs cursor-pointer focus:outline-hidden"
           >
-            <RefreshCw className="w-4 h-4" />
+            <RefreshCw className="w-4 h-4" aria-hidden="true" />
             <span>Try Again</span>
           </button>
           

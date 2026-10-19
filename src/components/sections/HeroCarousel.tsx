@@ -58,9 +58,9 @@ const slides: Slide[] = [
     subtitle: "Discreet translucent netting that permanently blocks pigeons from balcony ledges, AC compressors, and utility voids without harming the birds.",
     image: "/images/main-images/annamayya-building-duct-pigeon-netting-mathikere.webp",
     altText: "Annamayya Safety Nets humane pigeon protection netting installed across utility balcony",
-    ctaText: "Pigeon Protection [CONFIRM WITH CLIENT]",
+    ctaText: "Explore Pigeon Netting",
     ctaLink: "/services/pigeon-safety-nets",
-    badge: "Humane Bird Barrier • [CONFIRM WITH CLIENT]",
+    badge: "Humane Bird Barrier • UV Resistant Mesh • Clean Finish",
   },
 ];
 
@@ -133,16 +133,16 @@ export default function HeroCarousel() {
           {/* Core Value Pillars Bar */}
           <div className="mt-6 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-semibold text-slate-300">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" /> On-Time Visits
+              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" aria-hidden="true" /> On-Time Visits
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" /> Clean Finish &amp; Dust Cleanup
+              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" aria-hidden="true" /> Clean Finish &amp; Dust Cleanup
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" /> Honest Upfront Quotes
+              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" aria-hidden="true" /> Honest Upfront Quotes
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" /> North Bangalore Specialists
+              <CheckCircle2 className="w-4 h-4 text-[#F57C00]" aria-hidden="true" /> North Bangalore Specialists
             </span>
           </div>
 
@@ -153,15 +153,15 @@ export default function HeroCarousel() {
               className="inline-flex items-center gap-2 bg-[#F57C00] hover:bg-[#E65100] text-white font-extrabold px-6 sm:px-8 py-3.5 rounded-full transition-all duration-300 text-sm shadow-xl shadow-[#F57C00]/25 transform hover:-translate-y-0.5"
             >
               <span>{slides[current].ctaText}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
 
             <a
               href="tel:+916281048162"
               className="inline-flex items-center gap-2 bg-[#23272F] hover:bg-[#323842] text-white border border-slate-600 font-extrabold px-5 sm:px-6 py-3.5 rounded-full transition-all duration-300 text-sm shadow-sm"
-              aria-label="Call +91 62810 48162"
+              aria-label="Call Annamayya Safety Nets at +91 62810 48162"
             >
-              <Phone className="w-4 h-4 text-[#F57C00]" />
+              <Phone className="w-4 h-4 text-[#F57C00]" aria-hidden="true" />
               <span>Call +91 62810 48162</span>
             </a>
 
@@ -170,9 +170,9 @@ export default function HeroCarousel() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold px-5 py-3.5 rounded-full transition-all duration-300 text-sm shadow-lg shadow-[#25D366]/20"
-              aria-label="Chat on WhatsApp"
+              aria-label="Chat with Annamayya Safety Nets on WhatsApp"
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
+              <MessageSquare className="w-4 h-4 fill-current" aria-hidden="true" />
               <span>WhatsApp</span>
             </a>
           </div>
@@ -182,16 +182,20 @@ export default function HeroCarousel() {
       {/* Slider Controls */}
       <div className="absolute bottom-6 right-6 z-30 flex items-center gap-2">
         <button
+          type="button"
           onClick={prevSlide}
           className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-xs transition-colors border border-white/10"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-5 h-5" aria-hidden="true" />
         </button>
-        <div className="flex gap-1.5 px-2">
+        <div className="flex gap-1.5 px-2" role="tablist" aria-label="Hero carousel slide navigation">
           {slides.map((_, i) => (
             <button
               key={i}
+              type="button"
+              role="tab"
+              aria-selected={i === current}
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === current ? "w-8 bg-[#F57C00]" : "w-2 bg-white/40"
@@ -201,11 +205,12 @@ export default function HeroCarousel() {
           ))}
         </div>
         <button
+          type="button"
           onClick={nextSlide}
           className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-xs transition-colors border border-white/10"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-5 h-5" aria-hidden="true" />
         </button>
       </div>
     </section>

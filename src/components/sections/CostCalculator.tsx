@@ -116,6 +116,11 @@ export default function CostCalculator() {
               </div>
               <input
                 id="installation-area-range"
+                role="slider"
+                aria-valuenow={areaSqFt}
+                aria-valuemin={40}
+                aria-valuemax={600}
+                aria-valuetext={`${areaSqFt} square feet`}
                 aria-label="Approximate Area or Dimension in Square Feet"
                 type="range"
                 min="40"
@@ -135,19 +140,19 @@ export default function CostCalculator() {
             {/* Included Guarantees */}
             <div className="pt-4 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-600">
               <div className="flex items-center gap-1.5 font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
                 <span className="font-semibold text-emerald-800">10 Years Warranty</span>
               </div>
               <div className="flex items-center gap-1.5 font-medium">
-                <Sparkles className="w-4 h-4 text-[#F57C00] shrink-0" />
+                <Sparkles className="w-4 h-4 text-[#F57C00] shrink-0" aria-hidden="true" />
                 <span className="font-semibold text-amber-700">Flat 20% OFF</span>
               </div>
               <div className="flex items-center gap-1.5 font-medium">
-                <Zap className="w-4 h-4 text-[#23272F] shrink-0" />
+                <Zap className="w-4 h-4 text-[#23272F] shrink-0" aria-hidden="true" />
                 <span>Free Doorstep Visit</span>
               </div>
               <div className="flex items-center gap-1.5 font-medium">
-                <Award className="w-4 h-4 text-[#23272F] shrink-0" />
+                <Award className="w-4 h-4 text-[#23272F] shrink-0" aria-hidden="true" />
                 <span>SS304/SS316 Hardware</span>
               </div>
             </div>

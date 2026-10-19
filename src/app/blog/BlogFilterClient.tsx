@@ -36,9 +36,11 @@ export default function BlogFilterClient({ initialPosts }: BlogFilterClientProps
       <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white p-5 rounded-3xl border border-slate-200 shadow-xs">
         {/* Search */}
         <div className="relative w-full md:w-80">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+          <label htmlFor="blog-search" className="sr-only">Search safety guides</label>
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" aria-hidden="true" />
           <input
             type="text"
+            id="blog-search"
             placeholder="Search safety guides..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -47,10 +49,12 @@ export default function BlogFilterClient({ initialPosts }: BlogFilterClientProps
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-2 w-full md:w-auto">
+        <div className="flex flex-wrap gap-2 w-full md:w-auto" role="group" aria-label="Filter blog posts by category">
           {filters.map((filter) => (
             <button
               key={filter.value}
+              type="button"
+              aria-pressed={activeFilter === filter.value}
               onClick={() => setActiveFilter(filter.value)}
               className={`text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full capitalize cursor-pointer transition-all ${
                 activeFilter === filter.value

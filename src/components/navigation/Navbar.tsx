@@ -21,7 +21,7 @@ import Image from "next/image";
 const safetyNetsServices = [
   { name: "Balcony Safety Nets", href: "/services/balcony-safety-nets" },
   { name: "Child Safety Nets", href: "/services/children-safety-nets" },
-  { name: "Pigeon Safety Nets [CONFIRM WITH CLIENT]", href: "/services/pigeon-safety-nets" },
+  { name: "Pigeon Safety Nets", href: "/services/pigeon-safety-nets" },
 ];
 
 const invisibleGrillsServices = [
@@ -371,11 +371,14 @@ export default function Navbar() {
             {/* MOBILE MENU TOGGLE BUTTON */}
             <div className="flex xl:hidden items-center gap-2">
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-xl text-[#23272F] hover:bg-[#F8FAFC] transition-colors"
-                aria-label="Toggle Navigation Menu"
+                className="p-2 rounded-xl text-[#23272F] hover:bg-[#F8FAFC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F57C00]/40"
+                aria-label={isMobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-nav-drawer"
               >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -386,6 +389,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-nav-drawer"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -421,14 +425,17 @@ export default function Navbar() {
                     return (
                       <div key={link.label} className="py-1">
                         <button
+                          type="button"
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                          aria-expanded={mobileServicesOpen}
+                          aria-controls="mobile-services-menu"
                           className="w-full flex items-center justify-between py-2 text-base font-bold text-[#23272F]"
                         >
                           <span>{link.label}</span>
-                          <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180 text-[#F57C00]" : ""}`} />
+                          <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180 text-[#F57C00]" : ""}`} aria-hidden="true" />
                         </button>
                         {mobileServicesOpen && (
-                          <div className="pl-4 py-2 space-y-3 border-l-2 border-[#F57C00] my-1 bg-[#F8FAFC] rounded-r-xl p-3">
+                          <div id="mobile-services-menu" className="pl-4 py-2 space-y-3 border-l-2 border-[#F57C00] my-1 bg-[#F8FAFC] rounded-r-xl p-3">
                             <div className="font-bold text-xs text-[#F57C00] uppercase">Safety Nets</div>
                             {safetyNetsServices.map((s) => (
                               <Link key={s.name} href={s.href} onClick={closeMobileMenu} className="block text-xs font-semibold text-slate-700 py-1">

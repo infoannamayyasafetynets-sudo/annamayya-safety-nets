@@ -63,7 +63,7 @@ export default function SideFloatingContact() {
             title="Call +91 62810 48162"
             className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F57C00] hover:bg-[#FF9800] text-white shadow-lg shadow-[#F57C00]/35 transition-colors duration-200 relative group animate-shake-loop-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F57C00] focus:ring-offset-2"
           >
-            <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white" />
+            <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
             {/* Desktop Tooltip pointing to the right */}
             <span className="hidden md:block absolute left-13 sm:left-14 bg-[#23272F] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow-md opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
               Call +91 62810 48162
@@ -83,6 +83,7 @@ export default function SideFloatingContact() {
           >
             <svg
               className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-current text-white"
+              aria-hidden="true"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

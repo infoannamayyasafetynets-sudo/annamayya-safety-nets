@@ -198,7 +198,7 @@ export default function TestimonialsClient() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 mb-10 pb-4 border-b border-slate-200">
+        <div className="flex flex-wrap gap-2 mb-10 pb-4 border-b border-slate-200" role="group" aria-label="Filter reviews by service">
           {[
             { id: "all", label: "All Reviews (12)" },
             { id: "safety-nets", label: "Safety Nets (6)" },
@@ -207,6 +207,8 @@ export default function TestimonialsClient() {
           ].map((cat) => (
             <button
               key={cat.id}
+              type="button"
+              aria-pressed={activeCategory === cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeCategory === cat.id
@@ -230,7 +232,7 @@ export default function TestimonialsClient() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1 text-[#F57C00]">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
                     ))}
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -247,7 +249,7 @@ export default function TestimonialsClient() {
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">{review.name}</h4>
                   <div className="flex items-center gap-1 text-slate-400 text-[11px] mt-0.5">
-                    <MapPin className="w-3 h-3 text-[#F57C00]" />
+                    <MapPin className="w-3 h-3 text-[#F57C00]" aria-hidden="true" />
                     <span>{review.location}</span>
                   </div>
                 </div>
@@ -279,7 +281,7 @@ export default function TestimonialsClient() {
               href="tel:+916281048162"
               className="bg-[#F57C00] hover:bg-[#FF9800] text-slate-900 font-bold px-6 py-3.5 rounded-full text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" aria-hidden="true" />
               <span>Call +91 62810 48162</span>
             </a>
             <a
@@ -288,7 +290,7 @@ export default function TestimonialsClient() {
               rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-6 py-3.5 rounded-full text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2"
             >
-              <MessageSquare className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4" aria-hidden="true" />
               <span>WhatsApp Inquiry</span>
             </a>
           </div>

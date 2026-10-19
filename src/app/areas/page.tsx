@@ -209,19 +209,19 @@ export default function AreasPage() {
 
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-slate-200">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#F57C00]" />
+                <CheckCircle2 className="w-4 h-4 text-[#F57C00]" aria-hidden="true" />
                 <span>Zero-Cost Inspection</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>10-Year Written Warranty</span>
               </div>
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-300" />
+                <Sparkles className="w-4 h-4 text-amber-300" aria-hidden="true" />
                 <span>Flat 20% Discount Applied</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#F57C00]" />
+                <Clock className="w-4 h-4 text-[#F57C00]" aria-hidden="true" />
                 <span>Same-Day Installation</span>
               </div>
             </div>
@@ -237,8 +237,12 @@ export default function AreasPage() {
         <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm mb-10 space-y-5">
           {/* Live Search Input */}
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <label htmlFor="bangalore-areas-search" className="sr-only">
+              Search your Bangalore locality
+            </label>
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" aria-hidden="true" />
             <input
+              id="bangalore-areas-search"
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -248,10 +252,12 @@ export default function AreasPage() {
           </div>
 
           {/* Zone Filter Buttons */}
-          <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-100" role="group" aria-label="Bangalore zone filters">
             {zoneFilters.map((zone) => (
               <button
                 key={zone.id}
+                type="button"
+                aria-pressed={activeZone === zone.id}
                 onClick={() => setActiveZone(zone.id)}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                   activeZone === zone.id
@@ -285,7 +291,7 @@ export default function AreasPage() {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-8 h-8 rounded-full bg-[#23272F]/10 group-hover:bg-[#23272F] flex items-center justify-center transition-colors">
-                        <MapPin className="w-4 h-4 text-[#23272F] group-hover:text-[#F57C00] transition-colors shrink-0" />
+                        <MapPin className="w-4 h-4 text-[#23272F] group-hover:text-[#F57C00] transition-colors shrink-0" aria-hidden="true" />
                       </div>
                       <h3 className="text-base font-black text-[#23272F] group-hover:text-[#23272F] transition-colors">
                         {area.name}
@@ -311,12 +317,12 @@ export default function AreasPage() {
 
                   <div className="flex items-center justify-between pt-3 mt-3 border-t border-slate-100 text-xs font-bold text-[#23272F]">
                     <span className="flex items-center gap-1 text-slate-500 font-medium">
-                      <Clock className="w-3.5 h-3.5 text-[#F57C00]" />
+                      <Clock className="w-3.5 h-3.5 text-[#F57C00]" aria-hidden="true" />
                       <span>Same-Day Visit</span>
                     </span>
                     <span className="flex items-center gap-1 group-hover:translate-x-1 group-hover:text-[#F57C00] transition-all">
                       <span>View Services</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#F57C00]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#F57C00]" aria-hidden="true" />
                     </span>
                   </div>
                 </Link>
@@ -325,7 +331,7 @@ export default function AreasPage() {
 
             {filteredAreas.length === 0 && (
               <div className="bg-white rounded-3xl p-12 text-center border border-slate-200">
-                <Building2 className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                <Building2 className="w-12 h-12 text-slate-300 mx-auto mb-3" aria-hidden="true" />
                 <h3 className="text-base font-bold text-slate-900 mb-1">No matching Bangalore areas found</h3>
                 <p className="text-xs text-slate-500 mb-4">
                   We cover all surrounding Bangalore localities. Call us directly for immediate doorstep service.
@@ -334,7 +340,7 @@ export default function AreasPage() {
                   href="tel:+916281048162"
                   className="inline-flex items-center gap-2 bg-[#F57C00] text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-sm"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4" aria-hidden="true" />
                   <span>Call +91 62810 48162</span>
                 </a>
               </div>
@@ -363,7 +369,7 @@ export default function AreasPage() {
                   href="tel:+916281048162"
                   className="w-full flex items-center justify-center gap-2 bg-[#F57C00] hover:bg-[#FF9800] text-slate-900 font-black py-3 rounded-xl transition-colors text-xs shadow-md"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4" aria-hidden="true" />
                   <span>Call 62810 48162</span>
                 </a>
                 <a

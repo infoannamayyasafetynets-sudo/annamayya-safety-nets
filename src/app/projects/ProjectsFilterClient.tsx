@@ -40,8 +40,12 @@ export default function ProjectsFilterClient() {
       <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white p-5 rounded-3xl border border-slate-200 shadow-xs">
         {/* Search */}
         <div className="relative w-full md:w-80">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+          <label htmlFor="project-search" className="sr-only">
+            Search projects by area or service
+          </label>
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" aria-hidden="true" />
           <input
+            id="project-search"
             type="text"
             placeholder="Search by area or service..."
             value={searchQuery}
@@ -51,10 +55,12 @@ export default function ProjectsFilterClient() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-2 w-full md:w-auto">
+        <div className="flex flex-wrap gap-2 w-full md:w-auto" role="group" aria-label="Project category filters">
           {categoryFilters.map((cat) => (
             <button
               key={cat.value}
+              type="button"
+              aria-pressed={activeFilter === cat.value}
               onClick={() => {
                 setActiveFilter(cat.value);
                 setVisibleCount(6);
@@ -76,11 +82,12 @@ export default function ProjectsFilterClient() {
         <div className="text-center py-20 bg-white rounded-3xl border border-slate-200 flex flex-col items-center gap-3">
           <p className="text-slate-500 font-semibold">No installations found matching your query.</p>
           <button
+            type="button"
             onClick={() => {
               setSearchQuery("");
               setActiveFilter("all");
             }}
-            className="text-xs font-bold text-[#F57C00] hover:text-accent-hover"
+            className="text-xs font-bold text-[#F57C00] hover:text-accent-hover cursor-pointer"
           >
             Clear Filters
           </button>
@@ -100,22 +107,21 @@ export default function ProjectsFilterClient() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                
-              loading="lazy"
-              quality={75}
-            />
+                  loading="lazy"
+                  quality={75}
+                />
               </div>
 
               {/* Body */}
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] sm:text-xs text-slate-500 font-semibold uppercase">
                   <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#F57C00] shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-[#F57C00] shrink-0" aria-hidden="true" />
                     <span>{project.location}</span>
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" aria-hidden="true" />
                     <span>{project.date}</span>
                   </span>
                 </div>
@@ -132,7 +138,7 @@ export default function ProjectsFilterClient() {
                   className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#23272F] hover:text-[#F57C00] transition-colors group/btn pt-4 border-t border-slate-50 mt-auto"
                 >
                   <span>View Project Case Study</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -144,6 +150,7 @@ export default function ProjectsFilterClient() {
       {filteredProjects.length > visibleCount && (
         <div className="flex justify-center mt-6">
           <button
+            type="button"
             onClick={handleLoadMore}
             className="bg-[#23272F] hover:bg-[#F57C00] text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full cursor-pointer transition-colors shadow-sm"
           >

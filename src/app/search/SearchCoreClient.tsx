@@ -109,15 +109,15 @@ export default function SearchCoreClient() {
   const getIcon = (type: string) => {
     switch (type) {
       case "service":
-        return <Wrench className="w-4 h-4 text-[#F57C00] shrink-0 mt-0.5" />;
+        return <Wrench className="w-4 h-4 text-[#F57C00] shrink-0 mt-0.5" aria-hidden="true" />;
       case "area":
-        return <MapPin className="w-4 h-4 text-emerald-655 shrink-0 mt-0.5" />;
+        return <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />;
       case "project":
-        return <Briefcase className="w-4 h-4 text-[#23272F] shrink-0 mt-0.5" />;
+        return <Briefcase className="w-4 h-4 text-[#23272F] shrink-0 mt-0.5" aria-hidden="true" />;
       case "blog":
-        return <FileText className="w-4 h-4 text-purple-500 shrink-0 mt-0.5" />;
+        return <FileText className="w-4 h-4 text-purple-500 shrink-0 mt-0.5" aria-hidden="true" />;
       default:
-        return <HelpCircle className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />;
+        return <HelpCircle className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" aria-hidden="true" />;
     }
   };
 
@@ -136,7 +136,7 @@ export default function SearchCoreClient() {
           onChange={(e) => setQuery(e.target.value)}
           className="w-full bg-white border border-slate-250 focus:border-[#F57C00] px-12 py-4 rounded-2xl text-sm sm:text-base focus:outline-hidden focus:ring-2 focus:ring-[#F57C00]/10 shadow-xs"
         />
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 pointer-events-none" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 pointer-events-none" aria-hidden="true" />
         <button
           type="submit"
           className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#23272F] hover:bg-[#F57C00] text-white text-xs font-bold px-4.5 py-2.5 rounded-xl cursor-pointer transition-colors shadow-sm"

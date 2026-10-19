@@ -63,8 +63,13 @@ export default function BeforeAfterSlider({
       onPointerUp={handlePointerUp}
       onKeyDown={handleKeyDown}
       tabIndex={0}
-      className={`relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 select-none cursor-ew-resize focus:outline-hidden focus:ring-2 focus:ring-[#F57C00] ${className}`}
+      role="slider"
       aria-label="Before and after image comparison slider"
+      aria-valuenow={Math.round(sliderPosition)}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuetext={`${Math.round(sliderPosition)} percent showing ${afterLabel}`}
+      className={`relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 select-none cursor-ew-resize focus:outline-hidden focus:ring-2 focus:ring-[#F57C00] ${className}`}
     >
       {/* Before Image (Bottom Layer) */}
       <div className="absolute inset-0 w-full h-full bg-slate-200">
@@ -114,7 +119,7 @@ export default function BeforeAfterSlider({
       >
         {/* Drag Circle Handle */}
         <div className="w-10 h-10 rounded-full bg-[#F57C00] text-white border-2 border-white flex items-center justify-center shadow-lg transform -translate-x-1/2 cursor-ew-resize hover:scale-105 active:scale-95 transition-transform duration-200">
-          <MoveHorizontal className="w-4 h-4" />
+          <MoveHorizontal className="w-4 h-4" aria-hidden="true" />
         </div>
       </div>
     </div>

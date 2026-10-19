@@ -54,10 +54,12 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
       {/* 6-Image Responsive Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {images.slice(0, 6).map((imgUrl, index) => (
-          <div
+          <button
             key={index}
+            type="button"
             onClick={() => openLightbox(index)}
-            className="group relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer bg-slate-200"
+            aria-label={`View enlarged photo ${index + 1} of ${serviceName}`}
+            className="group relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer bg-slate-200 text-left focus:outline-none focus:ring-2 focus:ring-[#F57C00]"
           >
             <Image
               src={imgUrl}
@@ -71,10 +73,10 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
             {/* Hover overlay magnifying effect */}
             <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <div className="bg-white/80 p-3 rounded-full text-slate-800 backdrop-blur-xs scale-90 group-hover:scale-100 transition-all duration-300">
-                <Maximize2 className="w-5 h-5" />
+                <Maximize2 className="w-5 h-5" aria-hidden="true" />
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -85,27 +87,32 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${serviceName} image viewer`}
             className="fixed inset-0 bg-slate-950/95 z-50 flex items-center justify-center p-4 select-none"
           >
             {/* Close trigger overlay */}
-            <div className="absolute inset-0 z-0" onClick={closeLightbox}></div>
+            <div className="absolute inset-0 z-0" onClick={closeLightbox} aria-hidden="true"></div>
 
             {/* Modal Controls */}
             <button
+              type="button"
               onClick={closeLightbox}
-              className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer"
+              className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
               aria-label="Close image gallery"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6" aria-hidden="true" />
             </button>
 
             {/* Previous slide */}
             <button
+              type="button"
               onClick={prevPhoto}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6" aria-hidden="true" />
             </button>
 
             {/* Image Containment */}
@@ -129,11 +136,12 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
 
             {/* Next slide */}
             <button
+              type="button"
               onClick={nextPhoto}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
               aria-label="Next image"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6" aria-hidden="true" />
             </button>
 
             {/* Counter Badge */}

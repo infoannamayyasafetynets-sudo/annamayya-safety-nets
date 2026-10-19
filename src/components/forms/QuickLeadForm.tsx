@@ -97,7 +97,7 @@ export default function QuickLeadForm({
       {status === "success" ? (
         <div className="py-8 text-center space-y-4">
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
-            <CheckCircle2 className="w-8 h-8" />
+            <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
           </div>
           <h4 className="text-lg font-bold text-slate-900">Thank You! Request Received</h4>
           <p className="text-xs text-slate-600 max-w-xs mx-auto">
@@ -111,70 +111,93 @@ export default function QuickLeadForm({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white text-xs font-bold rounded-xl shadow-md hover:bg-[#1EBE5D] transition-colors"
+              aria-label="Chat with Annamayya Safety Nets on WhatsApp Instantly"
             >
               <span>Chat on WhatsApp Instantly</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
           {/* Honeypot field for bot protection */}
-          <input type="text" {...register("botfield")} className="hidden" tabIndex={-1} autoComplete="off" />
+          <label htmlFor={`quick-botfield-${citySlug}`} className="sr-only">Leave this field empty</label>
+          <input
+            type="text"
+            id={`quick-botfield-${citySlug}`}
+            {...register("botfield")}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
 
           {/* Name Field */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
+            <label htmlFor={`quick-name-${citySlug}`} className="block text-xs font-bold text-slate-700 mb-1">
+              Your Full Name *
+            </label>
             <input
               type="text"
+              id={`quick-name-${citySlug}`}
               placeholder="e.g. Ramesh Kumar"
+              aria-required="true"
+              aria-invalid={errors.name ? "true" : "false"}
               {...register("name")}
               className={`w-full px-3.5 py-2.5 text-sm bg-slate-50 border ${
                 errors.name ? "border-rose-400 bg-rose-50/20" : "border-slate-200"
               } rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F57C00] focus:bg-white transition-all`}
             />
-            {errors.name && <p className="text-[11px] text-rose-500 mt-1">{errors.name.message}</p>}
+            {errors.name && <p className="text-[11px] text-rose-500 mt-1" role="alert">{errors.name.message}</p>}
           </div>
 
           {/* Phone Field */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">WhatsApp / Phone Number *</label>
+            <label htmlFor={`quick-phone-${citySlug}`} className="block text-xs font-bold text-slate-700 mb-1">
+              WhatsApp / Phone Number *
+            </label>
             <div className="relative">
               <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400">
                 +91
               </span>
               <input
                 type="tel"
+                id={`quick-phone-${citySlug}`}
                 placeholder="98765 43210"
                 maxLength={10}
+                aria-required="true"
+                aria-invalid={errors.phone ? "true" : "false"}
                 {...register("phone")}
                 className={`w-full pl-12 pr-3.5 py-2.5 text-sm bg-slate-50 border ${
                   errors.phone ? "border-rose-400 bg-rose-50/20" : "border-slate-200"
                 } rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F57C00] focus:bg-white transition-all`}
               />
             </div>
-            {errors.phone && <p className="text-[11px] text-rose-500 mt-1">{errors.phone.message}</p>}
+            {errors.phone && <p className="text-[11px] text-rose-500 mt-1" role="alert">{errors.phone.message}</p>}
           </div>
 
           {/* Locality Field */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">
+            <label htmlFor={`quick-locality-${citySlug}`} className="block text-xs font-bold text-slate-700 mb-1">
               Neighborhood / Area in {cityName} *
             </label>
             <input
               type="text"
-              placeholder={`e.g. Apartment name / Locality`}
+              id={`quick-locality-${citySlug}`}
+              placeholder="e.g. Apartment name / Locality"
+              aria-required="true"
+              aria-invalid={errors.locality ? "true" : "false"}
               {...register("locality")}
               className={`w-full px-3.5 py-2.5 text-sm bg-slate-50 border ${
                 errors.locality ? "border-rose-400 bg-rose-50/20" : "border-slate-200"
               } rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F57C00] focus:bg-white transition-all`}
             />
-            {errors.locality && <p className="text-[11px] text-rose-500 mt-1">{errors.locality.message}</p>}
+            {errors.locality && <p className="text-[11px] text-rose-500 mt-1" role="alert">{errors.locality.message}</p>}
           </div>
 
           {/* Error notice */}
           {status === "error" && (
-            <p className="text-xs text-rose-600 bg-rose-50 p-2.5 rounded-lg border border-rose-100">
+            <p className="text-xs text-rose-600 bg-rose-50 p-2.5 rounded-lg border border-rose-100" role="alert">
               There was an issue sending your inquiry. Please call us directly at <strong>+91 62810 48162</strong>.
             </p>
           )}
@@ -183,24 +206,24 @@ export default function QuickLeadForm({
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-3 px-4 bg-gradient-to-r from-[#F57C00] to-[#01579B] hover:from-[#039BE5] hover:to-[#F57C00] text-white font-bold text-sm rounded-xl shadow-lg shadow-sky-900/20 flex items-center justify-center gap-2 transition-all transform active:scale-[0.98] cursor-pointer disabled:opacity-75"
+            className="w-full py-3.5 px-4 bg-[#F57C00] hover:bg-[#E65100] text-white font-extrabold text-sm rounded-xl shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2 transition-all transform active:scale-[0.98] cursor-pointer disabled:opacity-75 focus:outline-none focus:ring-2 focus:ring-[#F57C00] focus:ring-offset-2"
           >
             {status === "loading" ? (
               <>
-                <Loader2 className="w-4 h-4 animate-spin" />
+                <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                 <span>Scheduling Free Visit...</span>
               </>
             ) : (
               <>
                 <span>Book Free Inspection Now</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </>
             )}
           </button>
 
           {/* Privacy Guarantee Note */}
           <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500 pt-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" aria-hidden="true" />
             <span>100% Privacy Protected. No spam, no data sharing.</span>
           </div>
         </form>
