@@ -98,19 +98,19 @@ export default function HeroCarousel() {
               alt={slide.altText}
               fill
               priority={index === 0}
-              className="object-cover object-center transform scale-105 motion-safe:animate-pulse-subtle filter brightness-[0.38] contrast-[1.08]"
+              className="object-cover object-center transform scale-105 motion-safe:animate-pulse-subtle filter brightness-[0.92] contrast-[1.02]"
               sizes="100vw"
             />
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#181B20] via-[#181B20]/80 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#181B20] via-transparent to-black/30" />
+            {/* Clean Reduced Tint Scrims — Maximum Image Clarity & Crisp Readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
           </div>
         </div>
       ))}
 
       {/* Content Container */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFE8CC] text-[#23272F] font-bold text-xs uppercase tracking-wider mb-6 border border-[#F57C00]/40 shadow-sm">
             <MapPin className="w-3.5 h-3.5 text-[#F57C00]" />
