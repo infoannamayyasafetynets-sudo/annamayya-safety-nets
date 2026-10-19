@@ -1,0 +1,15 @@
+{
+  "name": "Annamayya Safety Nets",
+  "short_name": "Annamayya Safety Nets",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#23272F",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/"
+}

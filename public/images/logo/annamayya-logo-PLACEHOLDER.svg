@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" width="500" height="100" fill="none">
+  <defs>
+    <linearGradient id="asnGraphiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#2E3440" />
+      <stop offset="100%" stopColor="#1E2229" />
+    </linearGradient>
+    <linearGradient id="asnOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFA726" />
+      <stop offset="100%" stopColor="#F57C00" />
+    </linearGradient>
+  </defs>
+
+  <!-- Monogram Shield 'A' Badge -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="80" rx="20" fill="url(#asnGraphiteGrad)" />
+    <!-- Outer Shield Border Accent -->
+    <rect x="3" y="3" width="74" height="74" rx="17" stroke="url(#asnOrangeGrad)" stroke-width="2.5" fill="none" opacity="0.9" />
+    <!-- Stylized 'A' Monogram -->
+    <path d="M 22 62 L 40 24 L 58 62" 
+          stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 29 48 L 51 48" 
+          stroke="url(#asnOrangeGrad)" stroke-width="5" stroke-linecap="round" fill="none" />
+    <circle cx="40" cy="19" r="3.5" fill="url(#asnOrangeGrad)" />
+  </g>
+
+  <!-- Typography: Annamayya Safety Nets -->
+  <text x="106" y="47" font-family="system-ui, -apple-system, sans-serif" font-size="25" font-weight="800" fill="#23272F" letter-spacing="-0.5">
+    ANNAMAYYA
+  </text>
+  <text x="272" y="47" font-family="system-ui, -apple-system, sans-serif" font-size="25" font-weight="800" fill="#F57C00" letter-spacing="-0.5">
+    SAFETY NETS
+  </text>
+  <text x="108" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#4A4A4A" letter-spacing="3.5">
+    MATHIKERE • BENGALURU
+  </text>
+</svg>

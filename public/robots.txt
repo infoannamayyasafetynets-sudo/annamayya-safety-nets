@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /test/
+Disallow: /temp/
+Disallow: /development/
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://annamayyasafetynets.in/sitemap.xml
