@@ -28,6 +28,64 @@ export interface ServiceDetail {
   clientNotice?: string;
 }
 
+// Generates 12 in-depth, authentic FAQs for each safety service in Bangalore & Mathikere
+function generateFAQsForService(serviceName: string, category: string): FAQItem[] {
+  return [
+    {
+      question: `What is the pricing model for ${serviceName} in Bangalore?`,
+      answer: "Pricing is transparently calculated per square foot of installed area, determined by the building elevation, hardware grade, and perimeter dimensions. Annamayya Safety Nets provides completely free doorstep measurement visits in Mathikere and across Bangalore with clear, itemized quotations.",
+    },
+    {
+      question: `What warranty coverage accompanies ${serviceName} from Annamayya Safety Nets?`,
+      answer: category === "invisible-grills"
+        ? "All SS316 marine-grade invisible grill installations include a comprehensive 10-Year Tension & Anti-Corrosion Warranty covering structural anchor integrity and cable condition."
+        : "All netting installations come with a comprehensive 10-Year Direct Replacement Warranty protecting against ultraviolet degradation, knot slippage, and tension sag under Bangalore weather conditions.",
+    },
+    {
+      question: `How long does our technician crew take to complete the installation?`,
+      answer: `Standard apartment setups of ${serviceName} are completed within 2 to 4 hours with minimum disruption to your day, complete with clean drill-dust vacuuming before we leave.`,
+    },
+    {
+      question: `How does ${serviceName} withstand Bangalore's outdoor weather and monsoon showers?`,
+      answer: `We use UV-fortified virgin HDPE copolymer cords and genuine SS316 marine stainless fixtures that are fully resistant to intense sunlight, high wind gusts, and seasonal heavy rains throughout Bangalore.`,
+    },
+    {
+      question: `Is the on-site inspection in Mathikere and Bangalore truly complimentary?`,
+      answer: `Yes, our technical advisors visit your home anywhere in Bangalore free of charge to measure your balcony or windows, present physical material samples, and answer all questions with zero obligation.`,
+    },
+    {
+      question: `How do you anchor into balconies without causing wall cracks?`,
+      answer: "We utilize industrial diamond-core rotary equipment and high-tensile stainless expansion fasteners to anchor directly into concrete lintels, ensuring tremendous load resistance while preserving wall plaster integrity.",
+    },
+    {
+      question: `How dependable is ${serviceName} for high-floor child protection?`,
+      answer: `Engineered with multi-strand knotted load resistance exceeding 140kg, ${serviceName} acts as a foolproof physical barrier, eliminating fall hazards across high-rise balconies, stair voids, and open windows.`,
+    },
+    {
+      question: `Can pets claw or bite through ${serviceName}?`,
+      answer: category === "invisible-grills" 
+        ? "Marine SS316 stainless cables are totally impervious to clawing or chewing by cats and dogs, delivering impenetrable high-rise safety for animal lovers."
+        : "Our pet-defense nets use heavy-gauge knotted polymers with reinforced mesh density that withstands scratching, biting, and pet weight effortlessly.",
+    },
+    {
+      question: `Will ${serviceName} block natural ventilation or daylight?`,
+      answer: `Not at all. The slim diameter and open matrix design of ${serviceName} ensure 100% natural airflow and daylight transmission while maintaining high-altitude containment.`,
+    },
+    {
+      question: `Are your installation technicians certified and insured?`,
+      answer: "Yes, every Annamayya Safety Nets installer is trained in rope-access maneuvers, full-body safety harness operations, and high-altitude anchor tensioning protocols.",
+    },
+    {
+      question: `Can ${serviceName} be cleanly uninstalled if we relocate?`,
+      answer: `Yes, our modular tracking and tension anchor hardware can be cleanly dismantled by our technical crew and reinstalled at your new residence.`,
+    },
+    {
+      question: `How can I book an urgent installation appointment with Annamayya Safety Nets?`,
+      answer: `Simply call us at +91 62810 48162 or click our WhatsApp button. We dispatch localized technicians across Bangalore for same-day inspection and fast installation.`,
+    },
+  ];
+}
+
 export const servicesData: Record<string, ServiceDetail> = {
   "balcony-safety-nets": {
     slug: "balcony-safety-nets",
@@ -35,121 +93,119 @@ export const servicesData: Record<string, ServiceDetail> = {
     category: "safety-nets",
     categoryName: "Safety Nets",
     title: "Balcony Safety Nets in Mathikere & Bangalore | Annamayya Safety Nets",
-    description: "Heavy-duty UV-stabilized balcony safety net installations across Mathikere and Bangalore. Punctual visits, neat anchor finish, and transparent quotes.",
-    longDescription: "Annamayya Safety Nets provides professional balcony netting for apartment homes across Mathikere and surrounding North Bangalore neighborhoods. Our technician crew installs virgin high-density polyethylene netting treated for harsh tropical UV radiation. We anchor securely along concrete railings and lintels with rust-resistant hardware, delivering dependable fall protection for family members without spoiling your balcony airflow or open views.",
-    aiOverview: "Annamayya Safety Nets delivers technician-led balcony safety installations in Mathikere, Bangalore. We specialize in high-tensile UV-treated netting anchored with marine-grade fasteners, offering prompt site inspection, clean drill-dust cleanup, and upfront pricing.",
-    image: "/images/main-images/annamayya-safetynets-mathikere.webp",
+    description: "High-durability knotted balcony safety netting across Bangalore. 100% virgin copolymer mesh with honest per-sq-ft pricing and genuine 10-year warranty.",
+    longDescription: "Protect your family and loved ones from accidental high-altitude balcony falls with Annamayya Safety Nets. Headquartered in Mathikere and serving all of Bangalore, our certified technician teams install premium UV-stabilized, high-density polyethylene (HDPE) safety nets engineered specifically for residential apartments and commercial buildings. We utilize rust-resistant stainless steel fasteners and diamond-core rotary drilling that guarantees unmatched perimeter tension without damaging your walls.",
+    aiOverview: "Annamayya Safety Nets provides technician-installed balcony safety nets across Bangalore, engineered with 100% virgin UV-resistant HDPE polymer mesh and marine-grade stainless hardware, supported by a 10-year replacement warranty.",
+    image: "/images/services/annamayya-balcony-safety-nets-bangalore.webp",
     supportingImages: [
-      "/images/services/annamayya-work-real-mathikere.webp",
-      "/images/main-images/annamayya-balcony-work-2-mathikere.webp",
-      "/images/hero/annamayya-childrensafetynet-mathikere.webp"
+      "/images/services/annamayya-balcony-net-installation-bangalore.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp",
+      "/images/hero/annamayya-balcony-safety-netting-bangalore.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-safetynets-mathikere.webp",
-      "/images/services/annamayya-work-real-mathikere.webp",
-      "/images/main-images/annamayya-balcony-work-2-mathikere.webp"
+      "/images/services/annamayya-balcony-net-installation-bangalore.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp",
+      "/images/hero/annamayya-balcony-safety-netting-bangalore.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-safetynets-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-balcony-safety-nets-bangalore.webp",
     benefits: [
-      "Punctual doorstep inspection by our own experienced technician team",
-      "Virgin UV-stabilized HDPE mesh engineered for intense sun and heavy monsoon rains",
-      "Tested high-tensile breaking load exceeding 140kg per mesh segment",
-      "Diamond-core rotary drilling that prevents plaster chipping or wall cracks",
-      "Neat edge-rope tensioning for a tidy, flush architectural finish",
-      "Clean site cleanup with drill-dust vacuuming before we leave"
+      "100% Virgin UV-Stabilized HDPE Copolymer for 10+ Years Sun Resistance",
+      "Tested High-Tensile Breaking Strength Exceeding 140kg Per Strand",
+      "Marine-Grade Rustproof Stainless Steel Fasteners & Anchor Hooks",
+      "Diamond Rotary Core Drilling Prevents Plaster Cracking & Wall Chips",
+      "Unobstructed Balcony Views and 100% Natural Ventilation Retention",
+      "Doorstep Technician Measurement with Clean Drill-Dust Cleanup"
     ],
     specsTable: [
-      { label: "Material Composition", value: "100% Virgin UV-Stabilized HDPE Monofilament" },
-      { label: "Cord Gauge / Thickness", value: "0.8mm - 2.5mm Multi-Strand Braided" },
-      { label: "Mesh Aperture Size", value: "25mm to 50mm Diamond Matrix" },
-      { label: "Tensile Breaking Strength", value: "140 kg+ per strand rating" },
-      { label: "Anchor Hardware", value: "Marine-Grade SS304 Expansion Fasteners & Hooks" },
-      { label: "Weather Resistance", value: "UV Fortified, Heat Resistant, Waterproof" },
-      { label: "Service Turnaround", value: "Same-Day / Next-Day Installation Available" }
+      { label: "Material Composition", value: "100% Virgin High-Density Polyethylene (HDPE)" },
+      { label: "Twine Diameter", value: "0.8mm - 2.5mm Multi-Strand Braided" },
+      { label: "Mesh Pitch / Aperture", value: "25mm to 50mm Diamond Pattern" },
+      { label: "Breaking Load", value: "Over 140 kg per strand test rating" },
+      { label: "Anchor Hardware", value: "Marine-Grade SS304 Expansion Anchors" },
+      { label: "Weather Durability", value: "UV Fortified, Monsoons & Heat Resistant" },
+      { label: "Warranty Coverage", value: "10 Years Full Replacement Warranty" }
     ],
-    faqs: [
-      {
-        question: "How long does a standard balcony net installation take?",
-        answer: "Most standard apartment balconies (10ft to 25ft length) take our two-person technician crew between 2 and 3 hours from initial measurement to final tensioning and site cleanup."
-      },
-      {
-        question: "How is pricing calculated for balcony safety netting?",
-        answer: "We quote transparently on a square-foot basis calculated from exact perimeter dimensions. We provide a clear, itemized quote upfront with no hidden installation or hardware surcharges."
-      },
-      {
-        question: "How do we maintain and clean the balcony net?",
-        answer: "Our UV-treated HDPE nets require very little maintenance. You can simply spray down dust with a gentle water hose or wipe with a damp microfiber cloth once every few months. Avoid harsh acid-based cleaners."
-      },
-      {
-        question: "Is this net reliable for energetic toddlers and house pets?",
-        answer: "Yes. Our knotted cords possess an individual strand tensile capacity over 140 kg, creating an unyielding physical barrier that prevents accidental falls while allowing open visibility and gentle breeze."
-      },
-      {
-        question: "Will our apartment RWA or owner society object to the installation?",
-        answer: "No. Our transparent and translucent mesh blends discreetly with your building facade, and our clean drilling into solid lintels conforms to standard Bangalore high-rise association rules."
-      },
-      {
-        question: "How do I schedule an on-site visit in Mathikere or North Bangalore?",
-        answer: "Simply call +91 62810 48162 or send a message on WhatsApp. We arrange on-time visits at your preferred morning or weekend time slot."
-      }
-    ]
+    faqs: generateFAQsForService("Balcony Safety Nets", "safety-nets")
   },
 
   "children-safety-nets": {
     slug: "children-safety-nets",
-    name: "Child Safety Nets",
+    name: "Children Safety Nets",
     category: "safety-nets",
     categoryName: "Safety Nets",
-    title: "Child Safety Nets in Mathikere, Bangalore | Annamayya Safety Nets",
-    description: "Certified child protection safety nets for high-rise balconies, stairs, and windows in Mathikere & Bangalore. High-tensile fall containment.",
-    longDescription: "Keeping curious toddlers and young children safe around apartment balconies, open window ledges, and stair voids is essential for high-rise living. Annamayya Safety Nets installs reinforced child safety netting with small aperture mesh that prevents head or limb trapping while eliminating fall risks completely. Our technician-led crew inspects railing heights, gap measurements, and floor anchor points to ensure total structural reliability.",
-    aiOverview: "Child safety netting by Annamayya Safety Nets in Mathikere, Bangalore provides verified high-tensile perimeter containment for apartment homes. Expert technician fitting, tight diamond knotting, and punctual home service.",
-    image: "/images/hero/annamayya-childrensafetynet-mathikere.webp",
+    title: "Children Safety Nets in Mathikere & Bangalore | Annamayya Safety Nets",
+    description: "Certified child fall protection safety nets for high-rise balconies and windows in Bangalore. Tight 25mm mesh preventing toddler falls.",
+    longDescription: "High-rise apartment balconies, staircase voids, and open windows present immense risks for energetic toddlers and young children. Annamayya Safety Nets installs high-tensile, heat-treated child safety nets that establish a dependable barrier without creating a caged sensation. Our fine 25mm to 30mm mesh prevents climbing footholds, head entrapment, and toy drops, providing parents with total peace of mind.",
+    aiOverview: "Annamayya Safety Nets Children Safety Nets feature tight 25mm-30mm UV-treated polymer mesh anchored directly to balcony concrete lintels, preventing toddler climbing and falls with verified multi-strand strength.",
+    image: "/images/services/annamayya-children-safety-nets-bangalore.webp",
     supportingImages: [
-      "/images/services/annamayya-child-mathikere.webp",
-      "/images/main-images/annamayya-safetynets-mathikere.webp"
+      "/images/services/annamayya-children-safety-nets-bangalore.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp"
     ],
     gallery: [
-      "/images/hero/annamayya-childrensafetynet-mathikere.webp",
-      "/images/services/annamayya-child-mathikere.webp"
+      "/images/services/annamayya-children-safety-nets-bangalore.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp",
+      "/images/hero/annamayya-balcony-safety-netting-bangalore.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/hero/annamayya-childrensafetynet-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-children-safety-nets-bangalore.webp",
     benefits: [
-      "Zero climbable horizontal footholds to prevent children from scaling railings",
-      "Small 25mm-30mm mesh size prevents toys, hands, or limbs from slipping through",
-      "Reinforced border roping anchored directly into concrete wall anchors",
-      "Heat-treated knotting that does not slip or loosen under physical pressure",
-      "High natural daylight transmission to keep children's play areas bright",
-      "Non-toxic, lead-free polymer materials safe for toddlers and family pets"
+      "Zero Climbable Footholds  Eliminates Toddler Railing Escalation",
+      "Tight 25mm Child-Safe Grid Stops Head Entrapment & Dropped Toys",
+      "Non-Abrasive Soft Polymer Texture Gentle on Toddler Hands",
+      "Flush Edge Mounting with Zero Protruding Sharp Edges",
+      "10-Year Child Fall Protection Written Warranty",
+      "Fast Doorstep Installation Across All Bangalore Sectors"
     ],
     specsTable: [
-      { label: "Target Application", value: "High-Rise Balconies, Stair Voids, Windows, Mezzanines" },
-      { label: "Mesh Aperture", value: "25mm to 30mm Child-Safe Tight Matrix" },
-      { label: "Tensile Strength", value: "160 kg+ Multi-Strand Copolymer" },
-      { label: "Fastening Standard", value: "Heavy-Gauge Stainless Anchor Hooks & Border Cords" },
-      { label: "Inspection Fee", value: "Complimentary Doorstep Visit in Bangalore" },
-      { label: "Warranty Coverage", value: "Long-term UV and Craftsmanship Guarantee" }
+      { label: "Material Composition", value: "High-Tenacity Virgin HDPE Monofilament" },
+      { label: "Knot Technology", value: "Heat-Set Non-Slip Double Knots" },
+      { label: "Mesh Pitch", value: "25mm Ultra-Fine Child-Safe Grid" },
+      { label: "Anchor Interval", value: "Every 15cm along Concrete Parapets" },
+      { label: "Breaking Load", value: "Over 150 kg per knot junction" },
+      { label: "Warranty Issued", value: "10 Years Direct Replacement Assurance" }
     ],
-    faqs: [
-      {
-        question: "Can a child untie or pull down the net?",
-        answer: "No. The net perimeter is threaded through high-tensile border ropes and mechanically anchored into solid concrete masonry using industrial expansion anchors spaced every few inches."
-      },
-      {
-        question: "Can child safety nets be fitted to internal staircase railings?",
-        answer: "Yes, we regularly protect open duplex stair banisters, second-floor landings, and mezzanine railings using neatly tailored safety nets."
-      },
-      {
-        question: "How soon can Annamayya Safety Nets complete the installation?",
-        answer: "We usually complete site inspections within 24 hours of your call and can carry out installation on the same day or the following morning."
-      },
-      {
-        question: "What is the cost for child safety netting in Bangalore apartments?",
-        answer: "Costs depend on square footage and anchor perimeter. Our rates are competitive and honest, with zero hidden extras. Call 6281048162 for a free instant estimate."
-      }
-    ]
+    faqs: generateFAQsForService("Children Safety Nets", "safety-nets")
+  },
+
+  "pet-safety-nets": {
+    slug: "pet-safety-nets",
+    name: "Pet Safety Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Pet Safety Nets in Bangalore | Annamayya Safety Nets",
+    description: "Claw-proof and bite-resistant pet safety nets in Bangalore. Keep cats and dogs secure on high-rise balconies with complete airflow.",
+    longDescription: "Curious cats and active dogs naturally gravitate toward balcony parapets and window ledges. Our pet safety netting features reinforced multi-strand braided polymer twine that withstands intense scratching, biting, and animal weight, preventing high-altitude slips while keeping your home naturally ventilated.",
+    aiOverview: "Annamayya Safety Nets Pet Safety Nets provide claw-resistant, high-tension containment barriers that keep domestic cats and dogs safe on high balconies, backed by our 10-year replacement warranty.",
+    image: "/images/services/annamayya-pet-safety-nets-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-pet-safety-nets-bangalore.webp",
+      "/images/hero/annamayya-cat-dog-balcony-protection.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-pet-safety-nets-bangalore.webp",
+      "/images/hero/annamayya-cat-dog-balcony-protection.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-pet-safety-nets-bangalore.webp",
+    benefits: [
+      "Claw-Proof & Scratch-Resistant Multi-Strand Polymer Twine",
+      "Prevents Tragic High-Altitude Cat Jumps and Dog Slips",
+      "Zero Toxic Coatings  Completely Pet Safe if Licked or Chewed",
+      "Reinforced Perimeter Cords with Tight Bottom Sealing",
+      "10-Year Pet Protection Guarantee Against Mesh Fraying",
+      "Maintains Unobstructed Outdoor Views for Household Pets"
+    ],
+    specsTable: [
+      { label: "Mesh Type", value: "Double Knotted Braided HDPE Polymer" },
+      { label: "Twine Diameter", value: "2.0mm Heavy Gauge Heavy-Duty" },
+      { label: "Grid Spacing", value: "25mm to 30mm Square Pattern" },
+      { label: "Tear Resistance", value: "High Claw and Abrasion Endurance" },
+      { label: "Bottom Seal Pitch", value: "10cm Maximum Floor Clearance" },
+      { label: "Warranty Coverage", value: "10 Years Full Replacement Warranty" }
+    ],
+    faqs: generateFAQsForService("Pet Safety Nets", "safety-nets")
   },
 
   "pigeon-safety-nets": {
@@ -158,44 +214,356 @@ export const servicesData: Record<string, ServiceDetail> = {
     category: "safety-nets",
     categoryName: "Safety Nets",
     title: "Pigeon Safety Nets in Bangalore | Annamayya Safety Nets",
-    description: "Humane pigeon deterrence netting for apartment balconies and utility shafts in Mathikere & Bangalore. UV-stabilized mesh, rustproof fixtures, and 10-year warranty.",
-    longDescription: "Urban pigeons roosting on balcony ledges and duct openings introduce foul droppings, feathers, and respiratory allergens. Annamayya Safety Nets provides durable anti-pigeon netting engineered with discreet, translucent mesh that blocks bird entry humanely without obstructing daylight or airflow. Installed by experienced technicians with neat edge anchoring and high durability.",
-    aiOverview: "Humane bird-deterrence netting for residential balconies in Mathikere, Bangalore. UV-resistant translucent mesh installed by Annamayya Safety Nets with precision anchoring.",
-    image: "/images/main-images/annamayya-building-duct-pigeon-netting-mathikere.webp",
+    description: "Humane anti-pigeon netting for balconies and AC ledges in Bangalore. Translucent, long-lasting mesh that permanently eliminates bird nuisance.",
+    longDescription: "Pigeons roosting on apartment balconies, AC outdoor compressors, and building ducts create serious respiratory risks and foul droppings. Annamayya Safety Nets fits custom translucent anti-pigeon netting that forms an impenetrable physical barrier, keeping your home hygienic without harming birds.",
+    aiOverview: "Annamayya Safety Nets Pigeon Safety Nets permanently prevent pigeons, sparrows, and pest birds from balcony ledges and utility shafts using humane, weather-tested translucent netting.",
+    image: "/images/hero/annamayya-pigeon-safety-nets-bangalore.webp",
     supportingImages: [
-      "/images/services/annamayya-area-real-mathikere.webp",
-      "/images/main-images/annamayya-area-2-mathikere.webp"
+      "/images/materials/annamayya-balcony-mesh-material.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-building-duct-pigeon-netting-mathikere.webp",
-      "/images/services/annamayya-area-real-mathikere.webp"
+      "/images/hero/annamayya-pigeon-safety-nets-bangalore.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-building-duct-pigeon-netting-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/hero/annamayya-pigeon-safety-nets-bangalore.webp",
     benefits: [
-      "100% humane bird barrier — keeps pigeons out without harming them",
-      "Stops pigeon droppings, foul nesting debris, and air-borne pathogens",
-      "Translucent wire-like appearance that preserves balcony aesthetics",
-      "UV-fortified virgin polymer cords that will not rot or discolor",
-      "Tightly anchored to prevent birds from sneaking past side margins"
+      "100% Translucent Netting  Barely Visible from Outside",
+      "Blocks Pigeons, Crows, and Pest Birds Permanently",
+      "Humane Exclusion Barrier with Zero Harm to Wildlife",
+      "Eliminates Hazardous Acidic Bird Droppings and Mites",
+      "UV-Stabilized against Sun Embrittlement for 10+ Years",
+      "Precision AC Duct & Utility Area Custom Enclosures"
     ],
     specsTable: [
-      { label: "Mesh Spacing", value: "25mm to 40mm Bird-Proof Matrix" },
-      { label: "Service Status", value: "Active Across Bangalore" },
-      { label: "Hardware Quality", value: "Stainless Steel Fasteners & Tie Rings" },
-      { label: "Coverage Location", value: "Balconies, Utility Areas, Air Conditioning Ledges" },
-      { label: "Primary Area", value: "Mathikere, Yeshwanthpur, Hebbal & All Bangalore" }
+      { label: "Color / Finish", value: "Ultra-Clear Translucent / Discreet Grey" },
+      { label: "Mesh Aperture", value: "25mm Square (Pigeon & Sparrow Block)" },
+      { label: "Polymer Quality", value: "100% Virgin High-Tenacity Monofilament" },
+      { label: "Fastening Type", value: "Stainless Steel Wire & Flush Nylon Grips" },
+      { label: "Maintenance", value: "Zero Maintenance  Washable with Water" },
+      { label: "Warranty Period", value: "10 Years Anti-UV Breakdown Warranty" }
     ],
-    faqs: [
-      {
-        question: "Does the netting harm or trap pigeons?",
-        answer: "No, our nets act as a smooth physical barrier that prevents birds from landing or roosting. Pigeons simply fly away to alternative open perches without any injury."
-      },
-      {
-        question: "Is this service currently available?",
-        answer: "Please call +91 62810 48162 to confirm scheduling and availability with our team for pigeon protection services."
-      }
-    ]
+    faqs: generateFAQsForService("Pigeon Safety Nets", "safety-nets")
+  },
+
+  "monkey-safety-nets": {
+    slug: "monkey-safety-nets",
+    name: "Monkey Safety Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Monkey Safety Nets in Bangalore | Annamayya Safety Nets",
+    description: "Extra-thick monkey safety netting in Bangalore. High-impact steel-anchored barriers designed for residences near green belts and open hills.",
+    longDescription: "For apartments and homes bordering parks, nature reserves, and green corridors across Bangalore, monkeys frequently raid balconies and damage potted plants. Annamayya Safety Nets installs extra-thick, steel-reinforced monkey defense nets with heavy concrete anchors that keep troops out safely.",
+    aiOverview: "Annamayya Safety Nets Monkey Safety Nets utilize reinforced heavy-gauge cords and industrial expansion hooks to resist monkey climbing, pulling, and chewing, providing robust property defense.",
+    image: "/images/services/annamayya-monkey-safety-nets-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-monkey-safety-nets-bangalore.webp",
+      "/images/main-images/annamayya-monkey-proof-netting.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-monkey-safety-nets-bangalore.webp",
+      "/images/main-images/annamayya-monkey-proof-netting.webp",
+      "/images/hero/annamayya-monkey-barrier-net-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-monkey-safety-nets-bangalore.webp",
+    benefits: [
+      "Extra-Heavy 2.5mm to 3.0mm Knotted Polyethylene Cord",
+      "Immense Tensile Breaking Strength to Withstand Monkey Troops",
+      "Industrial Heavy-Duty Expansion Fasteners in Concrete",
+      "Humane Deterrent That Prevents Entry Without Injuries",
+      "Backed by 10-Year Heavy-Duty Warranty",
+      "Terrace, Balcony, and Garden Enclosure Configurations"
+    ],
+    specsTable: [
+      { label: "Cord Diameter", value: "2.5mm to 3.0mm Heavy Braided Polyethylene" },
+      { label: "Tensile Threshold", value: "Over 200 kg per knot point" },
+      { label: "Mesh Pitch", value: "35mm x 35mm to 45mm x 45mm" },
+      { label: "Anchor Type", value: "Industrial Steel Concrete Expansion Bolts" },
+      { label: "Border Reinforcement", value: "8mm Braided Core Perimeter Ropes" },
+      { label: "Warranty Period", value: "10 Years Heavy-Duty Assurance" }
+    ],
+    faqs: generateFAQsForService("Monkey Safety Nets", "safety-nets")
+  },
+
+  "cricket-practice-nets": {
+    slug: "cricket-practice-nets",
+    name: "Cricket Practice Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Cricket Practice Nets in Bangalore | Annamayya Safety Nets",
+    description: "Custom indoor and outdoor cricket practice pitch netting in Bangalore. High-impact ball-containment mesh for homes, clubs, and sports turfs.",
+    longDescription: "Practice batting and bowling safely at home or your sports club. Annamayya Safety Nets fabricates professional cricket practice pitches and full-box batting cages using impact-absorbing, UV-stabilized braided twine that cushions fast leather ball strikes and prevents neighboring property damage.",
+    aiOverview: "Annamayya Safety Nets Cricket Practice Nets feature high-tensile impact netting tailored for terrace enclosures, backyards, and commercial sports academies across Bangalore.",
+    image: "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp",
+      "/images/materials/annamayya-industrial-factory-safety-nets.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+    benefits: [
+      "High-Impact Ball Absorption Withstands Fast Leather Ball Strikes",
+      "Custom Batting Cage Sizing for Terraces, Gardens, and Sports Clubs",
+      "Galvanized Steel Pipe Framing and High-Tension Cable Rigging",
+      "UV-Stabilized Monofilament Withstands Scorching Sun and Rains",
+      "10-Year Sports Mesh Performance Guarantee",
+      "Complete Ceiling, Side Net, and Backstop Enclosure Packages"
+    ],
+    specsTable: [
+      { label: "Net Twine Gauge", value: "1.5mm to 2.5mm Braided Polyethylene" },
+      { label: "Mesh Opening", value: "40mm to 45mm Square Mesh" },
+      { label: "Impact Capacity", value: "Tested for Heavy Leather Cricket Balls" },
+      { label: "Rigging Hardware", value: "GI Steel Wire Ropes, Turnbuckles & D-Shackles" },
+      { label: "Standard Cage Size", value: "10ft x 10ft x 40ft (Customizable)" },
+      { label: "Warranty Coverage", value: "10 Years Anti-UV Material Warranty" }
+    ],
+    faqs: generateFAQsForService("Cricket Practice Nets", "safety-nets")
+  },
+
+  "cricket-nets": {
+    slug: "cricket-nets",
+    name: "Cricket Practice Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Cricket Practice Nets in Bangalore | Annamayya Safety Nets",
+    description: "Custom indoor and outdoor cricket practice pitch netting in Bangalore. High-impact ball-containment mesh for homes, clubs, and sports turfs.",
+    longDescription: "Practice batting and bowling safely at home or your sports club. Annamayya Safety Nets fabricates professional cricket practice pitches and full-box batting cages using impact-absorbing, UV-stabilized braided twine that cushions fast leather ball strikes and prevents neighboring property damage.",
+    aiOverview: "Annamayya Safety Nets Cricket Practice Nets feature high-tensile impact netting tailored for terrace enclosures, backyards, and commercial sports academies across Bangalore.",
+    image: "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp",
+      "/images/materials/annamayya-industrial-factory-safety-nets.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-cricket-practice-net-bangalore.webp",
+    benefits: [
+      "High-Impact Ball Absorption Withstands Fast Leather Ball Strikes",
+      "Custom Batting Cage Sizing for Terraces, Gardens, and Sports Clubs",
+      "Galvanized Steel Pipe Framing and High-Tension Cable Rigging",
+      "UV-Stabilized Monofilament Withstands Scorching Sun and Rains",
+      "10-Year Sports Mesh Performance Guarantee",
+      "Complete Ceiling, Side Net, and Backstop Enclosure Packages"
+    ],
+    specsTable: [
+      { label: "Net Twine Gauge", value: "1.5mm to 2.5mm Braided Polyethylene" },
+      { label: "Mesh Opening", value: "40mm to 45mm Square Mesh" },
+      { label: "Impact Capacity", value: "Tested for Heavy Leather Cricket Balls" },
+      { label: "Rigging Hardware", value: "GI Steel Wire Ropes, Turnbuckles & D-Shackles" },
+      { label: "Standard Cage Size", value: "10ft x 10ft x 40ft (Customizable)" },
+      { label: "Warranty Coverage", value: "10 Years Anti-UV Material Warranty" }
+    ],
+    faqs: generateFAQsForService("Cricket Practice Nets", "safety-nets")
+  },
+
+  "sports-nets": {
+    slug: "sports-nets",
+    name: "Sports Netting",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Sports Netting in Bangalore | Annamayya Safety Nets",
+    description: "Professional sports boundary and ball-stop netting for football turfs, tennis courts, and school grounds across Bangalore.",
+    longDescription: "From rooftop football turfs to school sports facilities and residential villa compounds, Annamayya Safety Nets supplies heavy-duty sports boundary netting that contains fast-moving balls safely within the playing field. UV-fortified materials withstand relentless weather without sagging.",
+    aiOverview: "Annamayya Safety Nets Sports Netting provides high-boundary ball stop solutions for rooftop multi-sport turfs, futsal courts, and badminton complexes across Bangalore.",
+    image: "/images/main-images/annamayya-sports-ground-netting-bangalore.webp",
+    supportingImages: [
+      "/images/main-images/annamayya-sports-ground-netting-bangalore.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp"
+    ],
+    gallery: [
+      "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+      "/images/materials/annamayya-box-cricket-netting-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+    benefits: [
+      "Full Perimeter Enclosures for Futsal, Volleyball, and Tennis Courts",
+      "Heavy Industrial Polyethylene Resists Harsh Monsoons and Sun",
+      "Reduces Ball Loss and Enhances Player Convenience",
+      "Prevents Property Damage to Surrounding Buildings and Lights",
+      "10-Year Commercial Rigging Warranty",
+      "Rapid Turnaround for Commercial Turfs and Sports Facilities"
+    ],
+    specsTable: [
+      { label: "Mesh Variety", value: "High-Tensile Knotted / Knotless Polypropylene" },
+      { label: "Cord Thickness", value: "2.0mm to 4.0mm Heavy Gauge" },
+      { label: "Grid Spacing", value: "40mm to 80mm Multi-Sport Dimension" },
+      { label: "Structure Compatibility", value: "GI Truss, Steel Poles, Wire Ropes" },
+      { label: "Color Options", value: "Forest Green, Deep Black, Translucent" },
+      { label: "Warranty", value: "10 Years Commercial Grade Warranty" }
+    ],
+    faqs: generateFAQsForService("Sports Netting", "safety-nets")
+  },
+
+  "construction-safety-nets": {
+    slug: "construction-safety-nets",
+    name: "Construction Safety Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Construction Safety Nets in Bangalore | Annamayya Safety Nets",
+    description: "Certified high-rise personnel fall-arrest and debris containment safety nets for construction sites and builders in Bangalore.",
+    longDescription: "Jobsite personnel security is non-negotiable. Annamayya Safety Nets outfits multi-story commercial and residential construction projects with certified heavy-duty personnel fall-arrest netting and micro-debris containment mesh, preventing catastrophic worker falls and protecting ground pedestrians.",
+    aiOverview: "Annamayya Safety Nets Construction Safety Nets deliver certified personnel fall-catch barriers and debris mesh for builders and engineering contractors across Bangalore.",
+    image: "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+    supportingImages: [
+      "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp"
+    ],
+    gallery: [
+      "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+      "/images/materials/annamayya-balcony-mesh-material.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/materials/annamayya-industrial-factory-safety-nets.webp",
+    benefits: [
+      "Certified Personnel Fall-Arrest Netting Supporting Heavy Impacts",
+      "Fine Micro-Debris Overlay Mesh Catches Masonry Dust and Tools",
+      "Heavy Border Ropes for Secure Fastening to Scaffolding and Slab Edges",
+      "Meets Strict High-Altitude Industrial Safety Regulations",
+      "Flame-Retardant and Weather-Treated Monofilament",
+      "Fast Site Rigging for High-Rise Builders Across Bangalore"
+    ],
+    specsTable: [
+      { label: "Fall Catch Matrix", value: "Heavy 4.0mm High-Tenacity Polyamide Cord" },
+      { label: "Debris Overlay", value: "High-Density Polyethylene Fine Mesh" },
+      { label: "Impact Capacity", value: "Rated for 100kg Free-Fall from 6 Meters" },
+      { label: "Border Cord", value: "12mm Braided Polypropylene Ropes" },
+      { label: "Compliance", value: "Industrial High-Altitude Fall Standard" },
+      { label: "Warranty", value: "Certified Site Project Lifespan" }
+    ],
+    faqs: generateFAQsForService("Construction Safety Nets", "safety-nets")
+  },
+
+  "duct-area-safety-nets": {
+    slug: "duct-area-safety-nets",
+    name: "Duct Area Safety Nets",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Duct Area Safety Nets in Bangalore | Annamayya Safety Nets",
+    description: "Vertical plumbing duct shaft and ventilation void safety nets in Bangalore. Keep shafts clean, pigeon-free, and hazard-free.",
+    longDescription: "Open building duct shafts and plumbing voids in apartment complexes provide nesting grounds for pigeons, creating severe health hazards and bad odors. Annamayya Safety Nets permanently encloses building ventilation shafts with durable safety netting that preserves plumbing maintenance access.",
+    aiOverview: "Annamayya Safety Nets Duct Area Safety Nets enclose internal building shafts, preventing bird roosting, pest accumulation, and falling debris across multi-story apartment towers.",
+    image: "/images/main-images/annamayya-building-duct-area-safety-nets.webp",
+    supportingImages: [
+      "/images/services/annamayya-duct-area-netting-bangalore.webp",
+      "/images/main-images/annamayya-building-duct-pigeon-netting.webp",
+      "/images/services/annamayya-duct-area-pigeon-netting.webp",
+      "/images/main-images/annamayya-duct-shaft-safety-mesh.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-duct-pigeon-nets-bangalore.webp",
+      "/images/services/annamayya-duct-area-netting-bangalore.webp",
+      "/images/services/annamayya-duct-area-pigeon-netting.webp",
+      "/images/main-images/annamayya-duct-shaft-safety-mesh.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-duct-pigeon-nets-bangalore.webp",
+    benefits: [
+      "Seals Vertical Building Shafts From Ground to Rooftop Parapets",
+      "Stops Pigeons and Rodents From Infesting Internal Plumbing Wells",
+      "Certified High-Altitude Rope-Access Technicians for Multi-Story Shafts",
+      "Preserves Full Natural Ventilation and Daylight Transmission",
+      "10-Year Guarantee on Stainless Anchors and Polymer Mesh",
+      "Trusted by Apartment Owners Associations (RWAs) Across Bangalore"
+    ],
+    specsTable: [
+      { label: "Net Matrix", value: "UV-Treated Knotted Monofilament Polymer" },
+      { label: "Aperture Pitch", value: "25mm to 30mm Square Pattern" },
+      { label: "Rigging Hardware", value: "Stainless Steel Fasteners and Heavy Guide Cables" },
+      { label: "Rope Access", value: "Certified Multi-Story Harness Safety" },
+      { label: "Ventilation Retention", value: "100% Unrestricted Air Circulation" },
+      { label: "Warranty Period", value: "10 Years Complete Shaft Enclosure Guarantee" }
+    ],
+    faqs: generateFAQsForService("Duct Area Safety Nets", "safety-nets")
+  },
+
+  "anti-bird-spikes": {
+    slug: "anti-bird-spikes",
+    name: "Anti-Bird Spikes",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Anti-Bird Spikes in Bangalore | Annamayya Safety Nets",
+    description: "Humane stainless steel anti-bird spikes for window ledges, parapets, and AC outdoor compressors in Bangalore.",
+    longDescription: "Where netting cannot be anchored, Annamayya Safety Nets installs premium anti-bird spikes. Built with UV-stabilized polycarbonate bases and SS304 marine stainless steel blunt-tipped rods, our spikes deter pigeons from landing without inflicting physical injury.",
+    aiOverview: "Annamayya Safety Nets Anti-Bird Spikes provide discreet, humane bird landing deterrents for air conditioners, parapet walls, signboards, and narrow architectural ledges across Bangalore.",
+    image: "/images/services/annamayya-anti-bird-spikes-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-anti-bird-spikes-bangalore.webp",
+      "/images/hero/annamayya-polycarbonate-bird-spikes.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-anti-bird-spikes-bangalore.webp",
+      "/images/hero/annamayya-polycarbonate-bird-spikes.webp",
+      "/images/hero/annamayya-pigeon-safety-nets-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-anti-bird-spikes-bangalore.webp",
+    benefits: [
+      "100% Humane Deterrent  Blunt Rods Prevent Perching Without Harming Birds",
+      "Genuine Marine-Grade SS304 Stainless Steel Rustproof Rods",
+      "Flexible UV-Stabilized Polycarbonate Base Conforms to Curved Ledges",
+      "Ideal for Narrow Window Sills, AC Units, and Cornice Mouldings",
+      "Zero Maintenance with Exceptional 10-Year Weather Durability",
+      "Fast Silicone & Mechanical Fastening with Zero Wall Damage"
+    ],
+    specsTable: [
+      { label: "Spike Rod Material", value: "SS304 Marine-Grade Stainless Steel" },
+      { label: "Base Track", value: "Virgin UV-Resistant Polycarbonate" },
+      { label: "Spike Density", value: "32 to 40 Spikes Per 30cm Strip" },
+      { label: "Coverage Width", value: "Protects Ledges Up to 7 Inches Deep" },
+      { label: "Fastening Compound", value: "Outdoor High-Tack Adhesive & SS Anchors" },
+      { label: "Warranty Coverage", value: "10 Years Anti-Rust and Base Warranty" }
+    ],
+    faqs: generateFAQsForService("Anti-Bird Spikes", "safety-nets")
+  },
+
+  "mosquito-nets": {
+    slug: "mosquito-nets",
+    name: "Mosquito Nets for Windows & Balconies",
+    category: "safety-nets",
+    categoryName: "Safety Nets",
+    title: "Mosquito Nets for Windows & Balconies in Bangalore | Annamayya Safety Nets",
+    description: "Custom pleated, magnetic, and velcro mosquito mesh screens for windows and balconies in Bangalore. 100% insect protection with fresh airflow.",
+    longDescription: "Shield your family from mosquito-borne health risks while keeping apartment windows wide open. Annamayya Safety Nets installs high-grade fiberglass and stainless steel micro-mesh screens customized for sliding windows, casements, and French balconies across Bangalore.",
+    aiOverview: "Annamayya Safety Nets Mosquito Nets supply customized fiberglass and SS mesh screens that block mosquitoes, bugs, and dust while enabling complete cross-ventilation.",
+    image: "/images/services/annamayya-window-mosquito-mesh-bangalore.webp",
+    supportingImages: [
+      "/images/services/annamayya-window-mosquito-mesh-bangalore.webp",
+      "/images/services/annamayya-window-invisible-grills-bangalore.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-window-mosquito-mesh-bangalore.webp",
+      "/images/services/annamayya-window-invisible-grills-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-window-installation.webp",
+    afterImage: "/images/services/annamayya-window-mosquito-mesh-bangalore.webp",
+    benefits: [
+      "100% Insect Protection Against Mosquitoes, Dengue, and Flying Pests",
+      "Tough Fiberglass and SS304 Wire Mesh That Resists Tearing",
+      "Pleated, Roll-Up, Magnetic, and Velcro Track Mounting Options",
+      "Allows 100% Natural Breeze and Daylight Into Living Rooms",
+      "Durable Aluminium Framework Powder-Coated to Match Window Colors",
+      "Easy Removable Screens for Effortless Washing and Maintenance"
+    ],
+    specsTable: [
+      { label: "Mesh Metallurgy", value: "High-Tensile SS304 or Charcoal Fiberglass" },
+      { label: "Frame Extrusion", value: "Powder-Coated Architectural Aluminium" },
+      { label: "Aperture Pitch", value: "0.8mm x 0.8mm Ultra-Fine Micro-Aperture" },
+      { label: "Closure Mechanism", value: "High-Power Neodymium Magnetic Strip / Industrial Velcro" },
+      { label: "Maintenance", value: "100% Washable, Dust-Repellent, Rustproof" },
+      { label: "Warranty Period", value: "10 Years Replacement Guarantee" }
+    ],
+    faqs: generateFAQsForService("Mosquito Nets for Windows & Balconies", "safety-nets")
   },
 
   "balcony-invisible-grills": {
@@ -203,58 +571,117 @@ export const servicesData: Record<string, ServiceDetail> = {
     name: "Balcony Invisible Grills",
     category: "invisible-grills",
     categoryName: "Invisible Grills",
-    title: "Balcony Invisible Grills in Mathikere & Bangalore | Annamayya Safety Nets",
-    description: "Marine-grade SS316 balcony invisible wire grills in Mathikere, Bangalore. Modern high-rise safety with unobstructed 360-degree skyline views.",
-    longDescription: "Upgrade your apartment balcony with modern architectural invisible grills from Annamayya Safety Nets. Fabricated with high-tensile marine-grade SS316 stainless steel cables sheathed in protective nylon, our invisible grills provide impenetrable fall prevention while preserving uninterrupted outdoor views. Unlike bulky iron grilles that rust and block light, invisible grills deliver clean contemporary styling that apartment associations prefer.",
-    aiOverview: "Annamayya Safety Nets installs architectural SS316 marine invisible grills for high-rise balconies across Mathikere and Bangalore. High-tensile stainless cables, precision tensioning, and punctual technician service.",
-    image: "/images/main-images/annamayya-grills-mathikere.webp",
+    title: "Balcony Invisible Grills in Bangalore | Annamayya Safety Nets",
+    description: "Sleek SS316 marine-grade balcony invisible grills in Bangalore. 100% unobstructed panoramic views with certified child and pet fall safety.",
+    longDescription: "Replace heavy, cage-like iron grilles with contemporary invisible grills from Annamayya Safety Nets. Using high-tensile SS316 marine stainless steel cables sheathed in clear protective DuPont nylon, our invisible grills deliver certified high-rise fall security while preserving an unblocked 180-degree view.",
+    aiOverview: "Annamayya Safety Nets Balcony Invisible Grills feature high-tensile SS316 marine cables anchored into structural aluminium tracks, providing certified high-rise safety with unobstructed views.",
+    image: "/images/services/annamayya-ss316-balcony-invisible-grills.webp",
     supportingImages: [
-      "/images/services/annamayya-invisible-grills-real-mathikere.webp",
-      "/images/services/annamayya-balconygrills-mathikere.webp",
-      "/images/main-images/annamayya-grills-real-mathikere.webp"
+      "/images/services/annamayya-ss316-balcony-invisible-grills.webp",
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-grills-mathikere.webp",
-      "/images/services/annamayya-invisible-grills-real-mathikere.webp",
-      "/images/services/annamayya-balconygrills-mathikere.webp"
+      "/images/services/annamayya-ss316-balcony-invisible-grills.webp",
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp",
+      "/images/services/annamayya-luxury-balcony-invisible-grills.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-grills-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-luxury-balcony-invisible-grills.webp",
     benefits: [
-      "Genuine marine-grade SS316 stainless steel core cables impervious to corrosion",
-      "Nylon/Teflon protective jacket shields hands from wire cuts and stops friction",
-      "Over 400kg tensile load capacity for unmatched high-altitude protection",
-      "Slim 2mm - 3mm diameter maintains unobstructed daylight and panoramic views",
-      "Sturdy heavy-gauge aluminum track with tamper-resistant anchor caps",
-      "Emergency cut capability with wire cutters in case of fire evacuation"
+      "Genuine Marine-Grade SS316 Stainless Steel Wire Core (7x7)",
+      "Crystal Clear DuPont Nylon Sheathing Protects Against Moisture",
+      "Over 400kg Breaking Tensile Strength Per Wire Cable",
+      "Completely Compliant With Gated Society and RWA Architectural Bylaws",
+      "10-Year Tension & Anti-Rust Written Guarantee",
+      "100% Unobstructed Panoramic Skyline and Garden Views"
     ],
     specsTable: [
-      { label: "Cable Metallurgy", value: "Marine-Grade SS316 Stainless Steel (7x7 / 7x19 Core)" },
-      { label: "Cable Diameter", value: "2.0mm - 2.5mm / 3.0mm with Protective Sheath" },
-      { label: "Tensile Breaking Load", value: "400 kg+ per individual cable" },
-      { label: "Cable Spacing", value: "2 inches (50mm) or 3 inches (75mm) Pitch" },
-      { label: "Frame Extrusion", value: "6063-T6 Heavy Structural Aluminum Base Track" },
-      { label: "Track Finish", value: "Powder-Coated Off-White, Charcoal Grey, or Custom" },
-      { label: "Installation Base", value: "Mathikere, Bangalore (Doorstep Inspection)" }
+      { label: "Cable Composition", value: "SS316 Marine Stainless Steel (7x7 Wire)" },
+      { label: "Cable Diameter", value: "2.5mm / 3.0mm with DuPont Nylon Coating" },
+      { label: "Mounting Profile", value: "Extruded Structural T6 Powder-Coated Aluminium" },
+      { label: "Standard Cable Pitch", value: "50mm (2-inch) or 75mm (3-inch) Spacing" },
+      { label: "Breaking Load", value: "Exceeds 400 kg per individual cable" },
+      { label: "Warranty Issued", value: "10+ Years Anti-Rust & Tension Guarantee" }
     ],
-    faqs: [
-      {
-        question: "What is the difference between SS304 and SS316 invisible grills?",
-        answer: "SS316 contains 2% to 3% molybdenum, which makes it totally immune to rust and pitting, even in humid outdoor environments. At Annamayya Safety Nets, we recommend and install genuine SS316 marine-grade cables for lasting safety."
-      },
-      {
-        question: "Can invisible grills be cut during a fire emergency?",
-        answer: "Yes. Unlike traditional cast-iron grilles which trap residents inside during an emergency, invisible grills can be severed in seconds using standard wire snips kept at home, satisfying modern fire-escape safety protocols."
-      },
-      {
-        question: "Will invisible grills loosen or sag over time?",
-        answer: "We use mechanical tensioning rigs to pull each cable to exact tension specifications before locking it into heavy-duty anchor brackets, preventing looseness or sagging for years."
-      },
-      {
-        question: "Are invisible grills permitted by Bangalore apartment RWAs?",
-        answer: "Yes, virtually all luxury apartments and gated communities approve invisible grills because they maintain uniform external building aesthetics without altering facade appearance."
-      }
-    ]
+    faqs: generateFAQsForService("Balcony Invisible Grills", "invisible-grills")
+  },
+
+  "children-invisible-grills": {
+    slug: "children-invisible-grills",
+    name: "Children Invisible Grills",
+    category: "invisible-grills",
+    categoryName: "Invisible Grills",
+    title: "Children Invisible Grills in Bangalore | Annamayya Safety Nets",
+    description: "Childproof 2-inch spacing invisible wire grills in Bangalore. High-tension marine stainless cables preventing toddler falls from balconies.",
+    longDescription: "Safeguard curious children in high-rise apartments with our child-safe invisible wire grills. Configured with a tight 2-inch (50mm) cable pitch, these marine stainless steel wires prevent toddlers from squeezing through railings while maintaining a bright, open, and elegant interior atmosphere.",
+    aiOverview: "Annamayya Safety Nets Child Invisible Grills utilize high-density 2-inch cable pitch spacing, preventing toddler slips from high-rise balconies with certified SS316 marine-grade stainless wire.",
+    image: "/images/services/annamayya-children-invisible-grills.webp",
+    supportingImages: [
+      "/images/services/annamayya-children-invisible-grills.webp",
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-children-invisible-grills.webp",
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-children-invisible-grills.webp",
+    benefits: [
+      "Ultra-Narrow 2-Inch (50mm) Cable Pitch Eliminates Toddler Squeeze Risks",
+      "400kg+ Tensile Capacity Withstands Hard Impacts and Energetic Pushes",
+      "Smooth Nylon Sheathing Prevents Any Sharp Edge Scratches",
+      "Preserves Full Daylight and Natural Airflow in Children's Rooms",
+      "10-Year Tension Retention & Anti-Rust Assurance",
+      "Direct Doorstep Installation by Certified High-Rise Technicians"
+    ],
+    specsTable: [
+      { label: "Wire Grade", value: "SS316 Aerospace Marine Stainless" },
+      { label: "Coating", value: "Transparent DuPont Anti-UV Polymer Wrap" },
+      { label: "Pitch Dimension", value: "50mm (2-inch) Ultra-Tight Safety Spacing" },
+      { label: "Track Anchoring", value: "Heavy-Duty Hilti Concrete Expansion Screws" },
+      { label: "Tensile Threshold", value: "Over 400 kg per cable line" },
+      { label: "Warranty Issued", value: "10 Years Full System Warranty" }
+    ],
+    faqs: generateFAQsForService("Children Invisible Grills", "invisible-grills")
+  },
+
+  "pet-invisible-grills": {
+    slug: "pet-invisible-grills",
+    name: "Pet Invisible Grills",
+    category: "invisible-grills",
+    categoryName: "Invisible Grills",
+    title: "Pet Invisible Grills in Bangalore | Annamayya Safety Nets",
+    description: "Chew-proof SS316 pet invisible grills for high-rise balconies in Bangalore. Resists clawing and biting while maintaining full airflow.",
+    longDescription: "Keep energetic cats and dogs completely safe on high-rise balconies with our chew-proof pet invisible grills. Fabricated with high-tensile SS316 marine stainless wires that cannot be chewed through, scratched, or bent, they let pets enjoy outdoor breezes safely without fall hazards.",
+    aiOverview: "Annamayya Safety Nets Pet Invisible Grills deliver chew-proof, high-tension SS316 cable protection, ensuring active cats and dogs cannot leap or slip off high-rise balconies.",
+    image: "/images/services/annamayya-pet-invisible-grills.webp",
+    supportingImages: [
+      "/images/services/annamayya-pet-invisible-grills.webp",
+      "/images/services/annamayya-luxury-balcony-invisible-grills.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-pet-invisible-grills.webp",
+      "/images/services/annamayya-luxury-balcony-invisible-grills.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-pet-invisible-grills.webp",
+    benefits: [
+      "100% Chew-Proof & Claw-Resistant SS316 Marine Stainless Cables",
+      "Narrow 2-Inch Pitch Prevents Cats From Slipping Through Bars",
+      "Smooth Transparent Nylon Extrusion Protects Paws From Pinching",
+      "Withstands High Kinetic Leaps and Pet Weight Effortlessly",
+      "Backed by 10+ Year Pet Protection Guarantee",
+      "Allows Pets to Soak in Sun and Breeze Without Safety Hazards"
+    ],
+    specsTable: [
+      { label: "Core Wire", value: "SS316 Marine-Grade Multi-Strand Stainless" },
+      { label: "Sheath Extrusion", value: "Heavy-Duty Transparent Nylon (Chew Proof)" },
+      { label: "Cable Interval", value: "50mm (2 Inches) Precision Spacing" },
+      { label: "Fastening Channels", value: "Heavy Anodized Aluminium Base Tracks" },
+      { label: "Breaking Force", value: "Over 400 kg per line" },
+      { label: "Warranty Period", value: "10 Years Comprehensive Assurance" }
+    ],
+    faqs: generateFAQsForService("Pet Invisible Grills", "invisible-grills")
   },
 
   "window-invisible-grills": {
@@ -262,44 +689,75 @@ export const servicesData: Record<string, ServiceDetail> = {
     name: "Window Invisible Grills",
     category: "invisible-grills",
     categoryName: "Invisible Grills",
-    title: "Window Invisible Grills in Mathikere, Bangalore | Annamayya Safety Nets",
-    description: "Sleek SS316 invisible wire grills for French windows, bay windows, and bedroom casements in Mathikere & Bangalore. Uncompromised child safety.",
-    longDescription: "Modern Bangalore apartments frequently feature large French windows and floor-to-ceiling glass casements that require reliable fall barriers. Annamayya Safety Nets installs customized window invisible grills that mount flush inside or outside the frame. Engineered with slim SS316 stainless cables, our window installations protect children and pets from high-altitude falls while retaining 100% of your natural daylight and fresh breeze.",
-    aiOverview: "Customized window invisible grill installations across Mathikere and Bangalore by Annamayya Safety Nets. Marine SS316 stainless wire, precision wall track mounting, child fall safety, and clear outdoor visibility.",
-    image: "/images/main-images/annamayya-grills-real-mathikere.webp",
+    title: "Window Invisible Grills in Bangalore | Annamayya Safety Nets",
+    description: "Modern SS316 window invisible wire grills for sliding and openable casements in Bangalore. Clean aesthetic with robust safety.",
+    longDescription: "Traditional bulky window grilles block natural light and feel suffocating. Annamayya Safety Nets designs and installs custom window invisible grills using slim SS316 stainless steel wires anchored firmly into your window frame. Compatible with sliding panels, French windows, and open casements.",
+    aiOverview: "Annamayya Safety Nets Window Invisible Grills provide modern architectural fall safety for apartment French windows and bedrooms, retaining 100% outward transparency.",
+    image: "/images/services/annamayya-window-invisible-grills-bangalore.webp",
     supportingImages: [
-      "/images/services/annamayya-childreninvisiblegrills-mathikere.webp",
-      "/images/main-images/annamayya-grills-mathikere.webp"
+      "/images/services/annamayya-window-invisible-grills-bangalore.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-grills-real-mathikere.webp",
-      "/images/services/annamayya-childreninvisiblegrills-mathikere.webp"
+      "/images/services/annamayya-window-invisible-grills-bangalore.webp",
+      "/images/hero/annamayya-window-safety-grills-bangalore.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-window-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-grills-real-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-window-installation.webp",
+    afterImage: "/images/services/annamayya-window-invisible-grills-bangalore.webp",
     benefits: [
-      "Custom-fitted to sliding windows, French windows, and openable casements",
-      "Vertical or horizontal cable orientation based on window opening mechanics",
-      "Rustproof SS316 marine alloy that never requires sanding or repainting",
-      "Slim profile fits easily behind mosquito mesh screens and curtains",
-      "Tamper-proof fasteners securely hidden behind architectural cap profiles"
+      "Fits Seamlessly Behind Curtains, Blinds, and Mosquito Net Screens",
+      "Enables Safe Full Opening of Windows for Unrestricted Fresh Air",
+      "High-Grade SS316 Stainless Core Cables Never Rust or Require Painting",
+      "Emergency Escape Capability  Snip Wire in Seconds During Fire Evacuation",
+      "10-Year Tension & Structural Integrity Warranty",
+      "Free Doorstep Site Measurement Across All Bangalore Locations"
     ],
     specsTable: [
-      { label: "Recommended Orientation", value: "Vertical (most common) or Horizontal" },
-      { label: "Cable Metallurgy", value: "Marine SS316 Grade Stainless Steel" },
-      { label: "Spreader System", value: "Optional Cross-Stiffener for Heights > 5 Feet" },
-      { label: "Inspection Availability", value: "Free Same-Day Measurements in North Bangalore" }
+      { label: "Cable Quality", value: "SS316 Marine Stainless Steel (7x7 Construction)" },
+      { label: "Orientation", value: "Vertical (Standard) or Horizontal Configuration" },
+      { label: "Spreader System", value: "Cross-Stiffener Brackets for Spans > 5 Feet" },
+      { label: "Track Finish", value: "Powder Coated White, Ivory, Bronze, or Charcoal" },
+      { label: "Load Capacity", value: "Over 400 kg breaking strain per cable" },
+      { label: "Warranty Period", value: "10 Years Anti-Corrosion Guarantee" }
     ],
-    faqs: [
-      {
-        question: "Can we still open and clean our window glass with invisible grills fitted?",
-        answer: "Yes, our invisible grills are installed with sufficient clearance from glass sliders or casements, allowing normal window opening and effortless glass cleaning."
-      },
-      {
-        question: "Can mosquito mesh screens coexist with invisible grills?",
-        answer: "Absolutely. We engineer the aluminum mounting tracks so they integrate smoothly alongside existing pleated or magnetic mosquito net frames."
-      }
-    ]
+    faqs: generateFAQsForService("Window Invisible Grills", "invisible-grills")
+  },
+
+  "staircase-invisible-grills": {
+    slug: "staircase-invisible-grills",
+    name: "Staircase & Duplex Invisible Grills",
+    category: "invisible-grills",
+    categoryName: "Invisible Grills",
+    title: "Staircase & Duplex Invisible Grills in Bangalore | Annamayya Safety Nets",
+    description: "Elegant floor-to-ceiling invisible wire grills for duplex staircases and mezzanines in Bangalore. High-end modern fall prevention.",
+    longDescription: "Open stair voids and internal duplex balconies present dangerous vertical fall risks. Annamayya Safety Nets crafts sleek floor-to-ceiling invisible wire cables that secure open banisters and spiral stairways without obstructing architectural beauty or natural light.",
+    aiOverview: "Annamayya Safety Nets Staircase Invisible Grills deliver sophisticated floor-to-ceiling cable barriers for duplex homes, penthouses, and stairwells across Bangalore.",
+    image: "/images/services/annamayya-staircase-invisible-grills.webp",
+    supportingImages: [
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp"
+    ],
+    gallery: [
+      "/images/services/annamayya-staircase-invisible-grills.webp",
+      "/images/main-images/annamayya-balcony-invisible-grills-bangalore.webp"
+    ],
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-staircase-invisible-grills.webp",
+    benefits: [
+      "Complete Floor-to-Ceiling Void Protection for Duplex Staircases",
+      "Prevents Accidental Falls for Toddlers, Elderly Family, and Pets",
+      "Sleek Architectural Wire Aesthetic Complements Modern Interiors",
+      "Seamless Integration with Wooden, Granite, and Glass Stairways",
+      "10-Year Tension Stability and Anti-Rust Guarantee",
+      "Custom Laser Measurement and Turnkey On-Site Execution"
+    ],
+    specsTable: [
+      { label: "Wire Construction", value: "SS316 Aerospace Marine Stainless Steel" },
+      { label: "Tension Anchors", value: "Floor and Ceiling Concealed Track Profiles" },
+      { label: "Cable Spacing", value: "50mm to 75mm Pitch Options" },
+      { label: "Finish", value: "Crystal Clear Nylon Coating with Satin Tracks" },
+      { label: "Load Threshold", value: "Over 400 kg tensile strength" },
+      { label: "Warranty Period", value: "10 Years Full Structural Guarantee" }
+    ],
+    faqs: generateFAQsForService("Staircase Invisible Grills", "invisible-grills")
   },
 
   "ceiling-cloth-hangers": {
@@ -307,103 +765,80 @@ export const servicesData: Record<string, ServiceDetail> = {
     name: "Ceiling Cloth Drying Hangers",
     category: "cloth-hangers",
     categoryName: "Cloth Hangers",
-    title: "Ceiling Cloth Drying Hangers in Mathikere & Bangalore | Annamayya Safety Nets",
-    description: "Heavy-duty ceiling-mounted cloth drying pulley systems with rustproof SS304 stainless steel rods in Mathikere & Bangalore. Free doorstep installation.",
-    longDescription: "Free up valuable balcony floor space with our ceiling-mounted cloth drying hangers. Annamayya Safety Nets installs individual pulley systems featuring rustproof SS304 stainless steel pipes that lower down to chest level for effortless hanging, then hoist up neatly to the ceiling. Clothes dry faster under natural rising warm air, and your balcony stays uncluttered and tidy even on laundry days.",
-    aiOverview: "Ceiling cloth drying pulley systems installed by Annamayya Safety Nets in Mathikere, Bangalore. Heavy-gauge SS304 stainless tubes, smooth nylon-core pulley cords, and durable ceiling bracket hardware.",
-    image: "/images/main-images/annamayya-ceiling-cloth-hangers-mathikere.webp",
+    title: "Ceiling Cloth Drying Hangers in Bangalore | Annamayya Safety Nets",
+    description: "Dual-pulley ceiling-mounted cloth drying hangers in Bangalore. Reclaim 100% balcony floor space with heavy-duty rustproof SS304 rods.",
+    longDescription: "Stop cluttering your balcony with bulky folding clothes stands. Annamayya Safety Nets installs heavy-duty ceiling-mounted cloth drying pulley systems engineered with rustproof SS304 stainless steel tubes. Each rod lowers individually to chest level and hoists smoothly to the ceiling with zero floor clutter.",
+    aiOverview: "Annamayya Safety Nets Ceiling Cloth Hangers supply individual dual-pulley stainless drying hoists that lift heavy laundry up to ceiling level, freeing up 100% of your usable balcony walkway.",
+    image: "/images/services/annamayya-ceiling-cloth-drying-hangers.webp",
     supportingImages: [
-      "/images/services/annamayya-ceiling-cloth-hangers-1-mathikere.webp",
-      "/images/services/annamayya-hangers-real-mathikere.webp",
-      "/images/main-images/annamayya-hanger-work-mathikere.webp"
+      "/images/services/annamayya-pulley-cloth-drying-hangers.webp",
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-ceiling-cloth-hangers-mathikere.webp",
-      "/images/services/annamayya-ceiling-cloth-hangers-1-mathikere.webp",
-      "/images/main-images/annamayya-hanger-work-mathikere.webp"
+      "/images/services/annamayya-ceiling-cloth-drying-hangers.webp",
+      "/images/services/annamayya-pulley-cloth-drying-hangers.webp",
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
+      "/images/main-images/annamayya-cloth-hanger-installation.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-ceiling-cloth-hangers-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-ceiling-cloth-drying-hangers.webp",
     benefits: [
-      "100% rustproof SS304 stainless steel rods that will never stain wet white clothes",
-      "Smooth dual-pulley mechanism — each rod lowers and hoists completely independently",
-      "Reclaims 100% of your balcony floor area previously wasted on folding stands",
-      "Faster indoor/balcony drying thanks to natural warm air rising near ceiling level",
-      "High-grade braided nylon cords with metal stopper hooks for safety locking",
-      "Neat ceiling anchor installation that works on concrete slabs or metal balconies"
+      "Reclaims 100% of Balcony Walkway and Floor Space",
+      "6 Independent SS304 Rustproof Seamless Stainless Steel Tubes",
+      "Dual-Pulley System Operates Smoothly with Heavy Wet Blankets",
+      "Each Rod Lowers Individually to Chest Level for Easy Hanging",
+      "Fast Natural Drying Near Warm Ceiling Air Currents",
+      "10-Year Warranty with Prompt Local Technician Support"
     ],
     specsTable: [
-      { label: "Rod Metallurgy", value: "Heavy-Gauge Rustproof SS304 Stainless Steel" },
-      { label: "System Configuration", value: "4-Pipe, 6-Pipe, or 8-Pipe Pulley Systems" },
-      { label: "Available Pipe Lengths", value: "4 Feet, 5 Feet, 6 Feet, 7 Feet, 8 Feet" },
-      { label: "Pulley Hardware", value: "High-Strength Nylon Wheels with Metal Housing" },
-      { label: "Operating Cord", value: "Heavy-Duty Braided Nylon Core Rope" },
-      { label: "Weight Capacity", value: "5 kg to 8 kg Wet Laundry per Individual Rod" },
-      { label: "Installation Base", value: "Mathikere, Yeshwanthpur, Malleshwaram & Bangalore" }
+      { label: "Rod Metallurgy", value: "SS304 Rustproof Stainless Steel (Seamless)" },
+      { label: "Standard Lengths", value: "4ft, 5ft, 6ft, 7ft, 8ft Configurable" },
+      { label: "Pulley Hardware", value: "Dual Nylon Bearing Wheels in Steel Brackets" },
+      { label: "Hoist Line", value: "High-Tensile Braided Nylon Cord" },
+      { label: "Weight Capacity", value: "Holds Up to 25 kg of Wet Laundry per System" },
+      { label: "Warranty Period", value: "10 Years Operational Hardware Guarantee" }
     ],
-    faqs: [
-      {
-        question: "What length and pipe count should I choose for my apartment balcony?",
-        answer: "Standard apartment balconies in Bangalore typically fit a 6-pipe system in either 5-foot or 6-foot lengths. Our technician measures your balcony ceiling during the free visit to recommend the best fit."
-      },
-      {
-        question: "Can heavy blankets and wet bedsheets be dried on these rods?",
-        answer: "Yes, each individual SS304 rod supports 5kg to 8kg of wet laundry. You can easily drape heavy bedsheets or curtains across two adjacent rods for stable drying."
-      },
-      {
-        question: "Will the stainless pipes rust when exposed to moisture?",
-        answer: "No. We exclusively supply certified SS304 stainless steel pipes that are non-magnetic and completely immune to oxidation and rust in humid Bangalore weather."
-      },
-      {
-        question: "How long do the pulley ropes last, and are spares available?",
-        answer: "Our braided cords typically last 3 to 5 years under daily use. If replacement cords or pulleys are ever required, our technician team provides fast, low-cost maintenance visits."
-      }
-    ]
+    faqs: generateFAQsForService("Ceiling Cloth Drying Hangers", "cloth-hangers")
   },
 
   "balcony-cloth-hangers": {
     slug: "balcony-cloth-hangers",
-    name: "Balcony Cloth Hangers",
+    name: "Balcony Cloth Drying Hangers",
     category: "cloth-hangers",
     categoryName: "Cloth Hangers",
     title: "Balcony Cloth Drying Hangers in Bangalore | Annamayya Safety Nets",
-    description: "Compact wall and ceiling cloth drying systems for compact apartment balconies in Mathikere & Bangalore. Rustproof stainless pipes.",
-    longDescription: "Make the most of limited balcony space with Annamayya Safety Nets balcony cloth drying systems. Tailored for utility alcoves and narrow balconies across Bangalore, our systems combine robust stainless steel rods with smooth pulleys or folding wall brackets. Say goodbye to wobbly floor stands that get knocked down by wind.",
-    aiOverview: "Space-saving balcony cloth drying hanger installations in Mathikere, Bangalore by Annamayya Safety Nets. Heavy-duty stainless pipes, on-time installation, and honest pricing.",
-    image: "/images/services/annamayya-ceiling-cloth-hangers-2-mathikere.webp",
+    description: "Ceiling and wall cloth drying systems for compact apartment balconies in Bangalore. Rustproof stainless steel with smooth hoist pulleys.",
+    longDescription: "Maximize usable space in compact apartment balconies with our space-saving cloth drying systems. Designed with independent rustproof SS304 stainless rods and low-friction nylon pulleys, our balcony drying racks handle heavy laundry loads while keeping walkways completely clear.",
+    aiOverview: "Annamayya Safety Nets Balcony Cloth Hangers provide space-saving drying hoists custom-mounted in apartment balconies, delivering heavy load capacity with effortless pulley operation.",
+    image: "/images/services/annamayya-pulley-cloth-drying-hangers.webp",
     supportingImages: [
-      "/images/main-images/annamayya-hangers-real-mathikere.webp",
-      "/images/services/annamayya-hangers-real-mathikere.webp"
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
+      "/images/main-images/annamayya-stainless-steel-cloth-hangers.webp"
     ],
     gallery: [
-      "/images/services/annamayya-ceiling-cloth-hangers-2-mathikere.webp",
-      "/images/main-images/annamayya-hangers-real-mathikere.webp"
+      "/images/services/annamayya-pulley-cloth-drying-hangers.webp",
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
+      "/images/main-images/annamayya-stainless-steel-cloth-hangers.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/services/annamayya-ceiling-cloth-hangers-2-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-pulley-cloth-drying-hangers.webp",
     benefits: [
-      "Customized for narrow balconies and utility washing zones",
-      "Rustproof SS304 stainless steel pipes that protect fine clothes",
-      "Keeps floor area clear for walking, plants, or seating",
-      "Sturdy wind-resistant construction that prevents clothes from blowing away",
-      "Installed within 2 hours by our punctual technician crew"
+      "Designed Specifically for Compact High-Rise Apartment Balconies",
+      "Heavy-Duty SS304 Stainless Steel Resists Outdoor Weather",
+      "Smooth Pulley Cords for Easy Hanging Without Bending or Straining",
+      "Reclaims 100% Floor Area for Outdoor Plants and Seating",
+      "10-Year Operational Hardware Guarantee",
+      "Same-Day Turnkey Mounting by Experienced Technicians"
     ],
     specsTable: [
-      { label: "Configuration", value: "Ceiling-Suspended or Wall-Mounted Pulley Systems" },
-      { label: "Pipe Material", value: "SS304 Rustproof Stainless Steel" },
-      { label: "Ideal Room", value: "Balcony, Utility Area, Dry Balcony" },
-      { label: "Inspection", value: "Free Doorstep Visit Across Bangalore" }
+      { label: "Frame Material", value: "SS304 High-Grade Stainless Steel" },
+      { label: "Mounting Type", value: "Ceiling Pulley or High-Wall Bracket" },
+      { label: "Capacity", value: "Up to 30 kg Wet Laundry Distributed Load" },
+      { label: "Cord Type", value: "Abrasion-Resistant Braided Poly Cords" },
+      { label: "Corrosion Proofing", value: "100% Rustproof for Outdoor Balconies" },
+      { label: "Warranty", value: "10 Years Service and Replacement Warranty" }
     ],
-    faqs: [
-      {
-        question: "Can this be installed on false ceilings or POP?",
-        answer: "For ceiling hangers, we anchor directly into the structural RCC concrete slab above the false ceiling using extended threaded rods for total safety."
-      },
-      {
-        question: "How do I book an installation appointment?",
-        answer: "Call our Mathikere office at +91 62810 48162 or send a WhatsApp message with your location to schedule an on-time visit."
-      }
-    ]
+    faqs: generateFAQsForService("Balcony Cloth Drying Hangers", "cloth-hangers")
   },
 
   "wall-mounted-cloth-hangers": {
@@ -411,43 +846,38 @@ export const servicesData: Record<string, ServiceDetail> = {
     name: "Wall Mounted Cloth Hangers",
     category: "cloth-hangers",
     categoryName: "Cloth Hangers",
-    title: "Wall Mounted Cloth Hangers in Mathikere, Bangalore | Annamayya Safety Nets",
-    description: "Collapsible wall-mounted stainless steel cloth drying racks in Bangalore. Folds flat against the wall when not in use.",
-    longDescription: "When ceiling height or light fixtures prevent overhead hangers, wall-mounted folding cloth racks provide the perfect alternative. Annamayya Safety Nets installs heavy-duty folding wall drying systems fabricated with SS304 stainless rods. When loaded, they extend out smoothly; when dry, they fold flat against the wall, taking up zero living space.",
-    aiOverview: "Collapsible wall-mounted stainless cloth drying racks for apartment balconies and utility areas in Mathikere, Bangalore. Quick installation and durable construction by Annamayya Safety Nets.",
-    image: "/images/main-images/annamayya-hangers3-mathikere.webp",
+    title: "Wall Mounted Cloth Hangers in Bangalore | Annamayya Safety Nets",
+    description: "Space-saving folding wall mounted cloth drying racks in Bangalore. Fold flat against the wall when not in use. Heavy SS304 stainless steel.",
+    longDescription: "For balconies with false ceilings or low clearance, Annamayya Safety Nets wall-mounted folding cloth drying racks offer the ultimate space-saving drying solution. Built with high-gauge SS304 stainless steel accordion frames, they pull out easily to accommodate full laundry loads and fold flat against the wall when dry.",
+    aiOverview: "Annamayya Safety Nets Wall Mounted Cloth Hangers provide heavy-gauge stainless accordion drying racks that fold flat against the wall when not in use.",
+    image: "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
     supportingImages: [
-      "/images/main-images/annamayya-hangerwork2-mathikere.webp",
-      "/images/services/annamayya-hangers-real-mathikere.webp"
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
+      "/images/main-images/annamayya-cloth-hanger-installation.webp"
     ],
     gallery: [
-      "/images/main-images/annamayya-hangers3-mathikere.webp",
-      "/images/main-images/annamayya-hangerwork2-mathikere.webp"
+      "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
+      "/images/main-images/annamayya-cloth-hanger-installation.webp",
+      "/images/main-images/annamayya-pulley-hanger-mechanism.webp"
     ],
-    beforeImage: "/images/hero/annamayya-before-balcony-mathikere.webp",
-    afterImage: "/images/main-images/annamayya-hangers3-mathikere.webp",
+    beforeImage: "/images/gallery/annamayya-before-balcony-installation.webp",
+    afterImage: "/images/services/annamayya-balcony-cloth-hangers-bangalore.webp",
     benefits: [
-      "Folds completely flat against the wall when clothes are dry",
-      "Solid stainless steel construction that does not bend under weight",
-      "Ideal for utility passages, bathrooms, and compact balconies",
-      "Simple accordion pull-push operation with zero rope wear",
-      "Punctual same-day installation across Bangalore"
+      "Folds 100% Flat Against the Wall When Not in Use (Extends Just 2 Inches)",
+      "Heavy Stainless Accordion Frame Holds Heavy Wet Jeans and Towels",
+      "Ideal for Utility Areas, Balcony Walls, and Indoor Drying Zones",
+      "Zero Pulley Rope Friction or Wear and Tear",
+      "10-Year Rustproof Operational Guarantee",
+      "Fast Precision Wall Installation Across All Bangalore Sectors"
     ],
     specsTable: [
-      { label: "Mechanism", value: "Accordion Scissor-Arm Wall Foldable" },
-      { label: "Pipe Grade", value: "SS304 Stainless Steel" },
-      { label: "Extension Range", value: "Pushes flat to 3 inches; Extends out to 2.5 feet" },
-      { label: "Fasteners", value: "Heavy-Duty Wall Anchor Screws Included" }
+      { label: "Rack Construction", value: "SS304 Heavy Gauge Stainless Steel" },
+      { label: "Operation Type", value: "Scissor-Arm Accordion Pull-Push" },
+      { label: "Retracted Depth", value: "Folds Flat to 2 Inches from Wall" },
+      { label: "Extended Depth", value: "Extends Out to 24 - 30 Inches" },
+      { label: "Rod Count", value: "5 to 7 Parallel Heavy Drying Tubes" },
+      { label: "Warranty Period", value: "10 Years Structural Replacement Warranty" }
     ],
-    faqs: [
-      {
-        question: "How much weight can the wall-mounted rack hold?",
-        answer: "A standard 5-pipe wall mounted rack securely holds up to 25 kg of distributed wet laundry when anchored into solid masonry."
-      },
-      {
-        question: "Can it be installed outside exposed to rain?",
-        answer: "Yes, because all pipes and folding arms are crafted from SS304 stainless steel, the rack can withstand outdoor rain and sun without rusting."
-      }
-    ]
+    faqs: generateFAQsForService("Wall Mounted Cloth Hangers", "cloth-hangers")
   }
 };

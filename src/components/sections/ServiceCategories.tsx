@@ -19,16 +19,16 @@ const categories: Category[] = [
   {
     id: 1,
     name: "Safety Net Solutions",
-    count: "Balcony & Child Safety",
+    count: "11 Safety Net Solutions",
     image: "/images/main-images/annamayya-safetynets-mathikere.webp",
     icon: <Shield className="w-6 h-6 text-white" />,
-    description: "Fortify balconies and stair openings with certified UV-treated virgin polymer netting. Punctual technician visits, neat edge finishing, and honest per-sq-ft pricing.",
+    description: "Fortify balconies, stair voids, and building shafts with certified UV-treated virgin polymer netting. Punctual technician visits, neat edge finishing, and honest per-sq-ft pricing.",
     slug: "safety-nets",
   },
   {
     id: 2,
     name: "SS316 Invisible Grills",
-    count: "Balconies & Windows",
+    count: "5 Invisible Grill Systems",
     image: "/images/main-images/annamayya-grills-mathikere.webp",
     icon: <Eye className="w-6 h-6 text-white" />,
     description: "Maintain 100% panoramic outdoor views while securing balconies and French windows with marine SS316 stainless wire cables tested to 400kg+ tensile breaking load.",
@@ -37,7 +37,7 @@ const categories: Category[] = [
   {
     id: 3,
     name: "Cloth Drying Systems",
-    count: "Ceiling & Wall Foldable",
+    count: "3 Drying Systems",
     image: "/images/main-images/annamayya-ceiling-cloth-hangers-mathikere.webp",
     icon: <Settings className="w-6 h-6 text-white" />,
     description: "Reclaim 100% of balcony floor space with smooth individual dual-pulley stainless steel ceiling hoists and folding wall-mounted accordion drying racks.",

@@ -37,7 +37,9 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const servicesList = Object.values(servicesData);
+  const servicesList = Object.values(servicesData).filter(
+    (s, idx, arr) => arr.findIndex((item) => item.slug === s.slug) === idx && s.slug !== "cricket-nets"
+  );
   const safetyNets = servicesList.filter((s) => s.category === "safety-nets");
   const invisibleGrills = servicesList.filter((s) => s.category === "invisible-grills");
   const clothHangers = servicesList.filter((s) => s.category === "cloth-hangers");

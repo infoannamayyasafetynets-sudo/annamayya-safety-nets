@@ -67,13 +67,17 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "Balcony Safety Nets", href: "/services/balcony-safety-nets" },
-                { label: "Child Safety Nets", href: "/services/children-safety-nets" },
+                { label: "Children Safety Nets", href: "/services/children-safety-nets" },
+                { label: "Pet Safety Nets", href: "/services/pet-safety-nets" },
                 { label: "Pigeon Protection Nets", href: "/services/pigeon-safety-nets" },
+                { label: "Monkey Safety Nets", href: "/services/monkey-safety-nets" },
+                { label: "Cricket Practice Nets", href: "/services/cricket-practice-nets" },
+                { label: "Duct Area Safety Nets", href: "/services/duct-area-safety-nets" },
+                { label: "Anti-Bird Spikes", href: "/services/anti-bird-spikes" },
+                { label: "Mosquito Mesh Screens", href: "/services/mosquito-nets" },
                 { label: "Balcony Invisible Grills", href: "/services/balcony-invisible-grills" },
-                { label: "Window Invisible Grills", href: "/services/window-invisible-grills" },
                 { label: "Ceiling Cloth Drying Hangers", href: "/services/ceiling-cloth-hangers" },
-                { label: "Balcony Cloth Hangers", href: "/services/balcony-cloth-hangers" },
-                { label: "Wall Mounted Cloth Hangers", href: "/services/wall-mounted-cloth-hangers" },
+                { label: "View All 19 Services →", href: "/services" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link

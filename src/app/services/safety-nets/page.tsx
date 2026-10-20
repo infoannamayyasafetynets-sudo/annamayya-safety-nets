@@ -37,7 +37,9 @@ export const metadata: Metadata = {
 };
 
 export default function SafetyNetsCategoryPage() {
-  const categoryServices = Object.values(servicesData).filter((s) => s.category === "safety-nets");
+  const categoryServices = Object.values(servicesData).filter(
+    (s) => s.category === "safety-nets" && s.slug !== "cricket-nets"
+  );
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

@@ -20,19 +20,29 @@ import Image from "next/image";
 
 const safetyNetsServices = [
   { name: "Balcony Safety Nets", href: "/services/balcony-safety-nets" },
-  { name: "Child Safety Nets", href: "/services/children-safety-nets" },
+  { name: "Children Safety Nets", href: "/services/children-safety-nets" },
+  { name: "Pet Safety Nets", href: "/services/pet-safety-nets" },
   { name: "Pigeon Safety Nets", href: "/services/pigeon-safety-nets" },
+  { name: "Monkey Safety Nets", href: "/services/monkey-safety-nets" },
+  { name: "Cricket Practice Nets", href: "/services/cricket-practice-nets" },
+  { name: "Sports Netting", href: "/services/sports-nets" },
+  { name: "Construction Safety Nets", href: "/services/construction-safety-nets" },
+  { name: "Duct Area Safety Nets", href: "/services/duct-area-safety-nets" },
+  { name: "Anti-Bird Spikes", href: "/services/anti-bird-spikes" },
+  { name: "Mosquito Nets for Windows & Balconies", href: "/services/mosquito-nets" },
 ];
 
 const invisibleGrillsServices = [
   { name: "Balcony Invisible Grills", href: "/services/balcony-invisible-grills" },
+  { name: "Children Invisible Grills", href: "/services/children-invisible-grills" },
+  { name: "Pet Invisible Grills", href: "/services/pet-invisible-grills" },
   { name: "Window Invisible Grills", href: "/services/window-invisible-grills" },
-  { name: "Invisible Grills Overview", href: "/services/invisible-grills" },
+  { name: "Staircase & Duplex Grills", href: "/services/staircase-invisible-grills" },
 ];
 
 const clothHangersServices = [
   { name: "Ceiling Cloth Drying Hangers", href: "/services/ceiling-cloth-hangers" },
-  { name: "Balcony Cloth Hangers", href: "/services/balcony-cloth-hangers" },
+  { name: "Balcony Cloth Drying Hangers", href: "/services/balcony-cloth-hangers" },
   { name: "Wall Mounted Cloth Hangers", href: "/services/wall-mounted-cloth-hangers" },
 ];
 
@@ -235,7 +245,7 @@ export default function Navbar() {
                                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200">
                                   <Shield className="w-5 h-5 text-[#F57C00]" />
                                   <h3 className="text-base font-extrabold text-[#23272F]">
-                                    Safety Nets <span className="text-xs font-semibold text-slate-500">(10 Services)</span>
+                                    Safety Nets <span className="text-xs font-semibold text-slate-500">({safetyNetsServices.length} Services)</span>
                                   </h3>
                                 </div>
                                 <div className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -253,12 +263,12 @@ export default function Navbar() {
                                 </div>
                               </div>
 
-                              {/* COLUMN 2: Invisible Grills (6 Services) */}
+                              {/* COLUMN 2: Invisible Grills (5 Services) */}
                               <div className="col-span-4 bg-[#F8FAFC] p-6 rounded-2xl border border-[#E5E7EB]">
                                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200">
                                   <Eye className="w-5 h-5 text-[#F57C00]" />
                                   <h3 className="text-base font-extrabold text-[#23272F]">
-                                    Invisible Grills <span className="text-xs font-semibold text-slate-500">(6 Services)</span>
+                                    Invisible Grills <span className="text-xs font-semibold text-slate-500">({invisibleGrillsServices.length} Services)</span>
                                   </h3>
                                 </div>
                                 <div className="flex flex-col gap-2">
@@ -276,13 +286,13 @@ export default function Navbar() {
                                 </div>
                               </div>
 
-                              {/* COLUMN 3: Cloth Hangers (2 Services) + Promo Card */}
+                              {/* COLUMN 3: Cloth Hangers (3 Services) + Promo Card */}
                               <div className="col-span-3 flex flex-col justify-between">
                                 <div className="bg-[#F8FAFC] p-5 rounded-2xl border border-[#E5E7EB] mb-4">
                                   <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-200">
                                     <Settings className="w-4 h-4 text-[#F57C00]" />
                                     <h3 className="text-sm font-extrabold text-[#23272F]">
-                                      Cloth Hangers <span className="text-[11px] font-semibold text-slate-500">(2)</span>
+                                      Cloth Hangers <span className="text-[11px] font-semibold text-slate-500">({clothHangersServices.length})</span>
                                     </h3>
                                   </div>
                                   <div className="flex flex-col gap-2">
