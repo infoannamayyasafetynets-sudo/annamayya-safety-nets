@@ -135,7 +135,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
 
-        {/* Google Analytics 4 (GA4): [PENDING CLIENT GA4 ID] */}
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18532481811"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18532481811');
+          `}
+        </Script>
 
         <Navbar />
         <main id="main-content" className="flex-grow pt-[96px] sm:pt-[102px] lg:pt-[108px]">{children}</main>
