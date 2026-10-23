@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Home, MapPin, Phone, Mail, Clock, Navigation } from "lucide-react";
+import { Home, MapPin, Phone, Mail, Navigation } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/utils/schema";
 import MapFrame from "@/components/ui/map-frame";
 import ContactForm from "@/components/forms/ContactForm";

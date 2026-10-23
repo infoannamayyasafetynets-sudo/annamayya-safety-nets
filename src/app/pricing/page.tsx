@@ -12,7 +12,6 @@ import {
   Phone,
   MessageSquare,
   CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/utils/schema";
 import ContactForm from "@/components/forms/ContactForm";

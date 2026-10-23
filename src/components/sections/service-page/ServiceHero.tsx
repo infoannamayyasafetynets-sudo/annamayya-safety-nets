@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageSquare, ArrowRight, ShieldCheck, Award, Clock, Wrench, Globe, CheckCircle2 } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/utils/analytics";
 
 interface HeroProps {
   name: string;
@@ -75,6 +76,7 @@ export function ServiceHero({ name, categoryName, title, subtitle, aiOverview, i
             <div className="flex flex-wrap gap-4 mt-4 w-full sm:w-auto">
               <a
                 href="tel:+916281048162"
+                onClick={() => trackPhoneClick(`service_hero_call_${name}`)}
                 className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-[#F57C00] text-slate-950 font-black px-6 py-4 rounded-full hover:bg-amber-400 transition-colors shadow-lg hover:shadow-xl text-sm"
               >
                 <Phone className="w-4 h-4" />
@@ -85,6 +87,7 @@ export function ServiceHero({ name, categoryName, title, subtitle, aiOverview, i
                 href="https://wa.me/916281048162?text=Hi%20Annamayya%20Safety%20Nets%2C%20I%20would%20like%20to%20claim%20the%20Flat%2020%25%20Discount%20and%2010%20Years%20Warranty%20for%20safety%20nets%2Finvisible%20grills."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick(`service_hero_whatsapp_${name}`)}
                 className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-emerald-600 text-white font-bold px-6 py-4 rounded-full hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl text-sm"
               >
                 <MessageSquare className="w-4 h-4 fill-white/10" />

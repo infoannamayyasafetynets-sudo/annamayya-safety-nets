@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Home, ShieldCheck, Clock, CheckCircle2, MapPin, Calculator, Sparkles, Navigation } from "lucide-react";
+import { Home, ShieldCheck, Clock, CheckCircle2, Calculator, Navigation } from "lucide-react";
 import { generateBreadcrumbSchema, generateOrganizationSchema } from "@/utils/schema";
 import ContactForm from "@/components/forms/ContactForm";
 

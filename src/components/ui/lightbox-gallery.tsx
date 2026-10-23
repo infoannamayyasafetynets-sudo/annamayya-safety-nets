@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,15 +21,13 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
     setPhotoIndex(null);
   };
 
-  const nextPhoto = () => {
-    if (photoIndex === null) return;
+  const nextPhoto = useCallback(() => {
     setPhotoIndex((prev) => (prev !== null ? (prev + 1) % images.length : 0));
-  };
+  }, [images.length]);
 
-  const prevPhoto = () => {
-    if (photoIndex === null) return;
+  const prevPhoto = useCallback(() => {
     setPhotoIndex((prev) => (prev !== null ? (prev - 1 + images.length) % images.length : 0));
-  };
+  }, [images.length]);
 
   // Keyboard navigation inside Lightbox
   useEffect(() => {
@@ -47,7 +45,7 @@ export default function LightboxGallery({ images, serviceName }: LightboxGallery
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [photoIndex]);
+  }, [photoIndex, nextPhoto, prevPhoto]);
 
   return (
     <>

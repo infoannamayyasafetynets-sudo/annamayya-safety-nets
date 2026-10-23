@@ -7,10 +7,7 @@ import {
   Star,
   MessageSquare,
   MapPin,
-  CheckCircle2,
   Phone,
-  Sparkles,
-  Filter,
 } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
 
@@ -241,7 +238,7 @@ export default function TestimonialsClient() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 italic">
-                  "{review.comment}"
+                  &ldquo;{review.comment}&rdquo;
                 </p>
               </div>
 

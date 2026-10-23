@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, Home, Shield, Percent } from "lucide-react";
+import { ArrowRight, Home, Shield, Percent } from "lucide-react";
 import { servicesData } from "@/utils/servicesData";
 import ServicePromoTicker from "@/components/sections/ServicePromoTicker";
 

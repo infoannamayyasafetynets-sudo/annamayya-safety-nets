@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Check, ShieldAlert, Settings, Wrench, ShieldCheck, Heart } from "lucide-react";
+import { Check, ShieldAlert, Settings, ShieldCheck } from "lucide-react";
 import { SpecItem } from "@/utils/servicesData";
 
 interface AboutProps {
@@ -23,7 +23,7 @@ export function ServiceAbout({ name, longDescription, benefits }: AboutProps) {
                 About This Service
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight leading-tight">
-                Complete Safety Overview & Architectural Alignment
+                {name} — Complete Safety Overview & Architectural Alignment
               </h2>
             </div>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed">

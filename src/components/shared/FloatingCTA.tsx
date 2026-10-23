@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/utils/analytics";
 
 export default function FloatingCTA() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -48,6 +49,7 @@ export default function FloatingCTA() {
       {/* Direct Call Button (Amber Gold) */}
       <motion.a
         href="tel:+916281048162"
+        onClick={() => trackPhoneClick("floating_cta_call")}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.2 }}
@@ -68,6 +70,7 @@ export default function FloatingCTA() {
         href="https://wa.me/916281048162?text=Hi%20Annamayya%20Safety%20Nets%2C%20I%20would%20like%20to%20request%20a%20free%20quote%20for%20safety%20nets%2Finvisible%20grills."
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick("floating_cta_whatsapp")}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.4 }}

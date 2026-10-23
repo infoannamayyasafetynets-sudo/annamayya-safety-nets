@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Home,
   MapPin,
-  ShieldCheck,
   Award,
   Clock,
   Phone,
@@ -13,14 +11,12 @@ import {
   Star,
   Sparkles,
   ArrowRight,
-  ShieldAlert,
   HelpCircle,
   Layers,
   Wrench,
-  FileCheck,
 } from "lucide-react";
-import { servicesData, ServiceDetail } from "@/utils/servicesData";
-import { areasData, AreaDetail } from "@/utils/areasData";
+import { servicesData } from "@/utils/servicesData";
+import { areasData } from "@/utils/areasData";
 import {
   generateBreadcrumbSchema,
   generateServiceSchema,

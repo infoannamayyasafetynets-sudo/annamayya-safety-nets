@@ -7,7 +7,6 @@ import {
   Home,
   MapPin,
   CheckCircle2,
-  ArrowRight,
   Sparkles,
   ShieldCheck,
   AlertTriangle,
@@ -51,7 +50,7 @@ const caseStudiesData: CaseStudy[] = [
     title: "Panoramic Skyline Invisible Grills at High-Rise Penthouse",
     location: "Koramangala, Bangalore, Karnataka",
     serviceCategory: "Balcony Invisible Grills",
-    image: "/images/services/shyambalconygrills.jpg",
+    image: "/images/services/annamayya-balconygrills-mathikere.webp",
     challenge:
       "A penthouse resident needed robust fall protection for grandchildren and a golden retriever without obstructing a breathtaking 180-degree skyline view or rusting from heavy monsoon rain and weather.",
     solution:

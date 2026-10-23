@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
+import { captureAdParameters } from "@/utils/analytics";
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
+    captureAdParameters();
     const consent = localStorage.getItem("annamayya_cookie_consent");
     if (!consent) {
       const timer = setTimeout(() => setShowBanner(true), 1500);

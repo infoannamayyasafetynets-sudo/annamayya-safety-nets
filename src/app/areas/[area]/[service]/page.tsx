@@ -1,10 +1,7 @@
-import { notFound } from "next/navigation";
 import ServiceLocationPage, {
   generateMetadata as generateServiceLocationMetadata,
   generateStaticParams as generateServiceLocationStaticParams,
 } from "@/app/services/[service]/[area]/page";
-import { servicesData } from "@/utils/servicesData";
-import { areasData } from "@/utils/areasData";
 
 interface PageProps {
   params: Promise<{ area: string; service: string }>;
@@ -12,7 +9,14 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { area, service } = await params;
-  return generateServiceLocationMetadata({ params: Promise.resolve({ service, area }) });
+  const baseMeta = await generateServiceLocationMetadata({ params: Promise.resolve({ service, area }) });
+  return {
+    ...baseMeta,
+    robots: {
+      index: false,
+      follow: true,
+    },
+  };
 }
 
 export async function generateStaticParams() {

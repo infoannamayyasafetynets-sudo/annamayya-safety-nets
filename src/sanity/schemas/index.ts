@@ -1,11 +1,18 @@
 // Sanity Studio Schema Definitions for Annamayya Safety Nets
 
+interface SanityRule {
+  required: () => SanityRule;
+  min: (n: number) => SanityRule;
+  max: (n: number) => SanityRule;
+  [key: string]: unknown;
+}
+
 export const authorSchema = {
   name: "author",
   title: "Author",
   type: "document",
   fields: [
-    { name: "name", title: "Author Name", type: "string", validation: (Rule: any) => Rule.required() },
+    { name: "name", title: "Author Name", type: "string", validation: (Rule: SanityRule) => Rule.required() },
     { name: "slug", title: "Slug", type: "slug", options: { source: "name", maxLength: 96 } },
     { name: "image", title: "Image", type: "image", options: { hotspot: true } },
     { name: "bio", title: "Bio", type: "text" },
@@ -17,8 +24,8 @@ export const faqSchema = {
   title: "FAQ",
   type: "document",
   fields: [
-    { name: "question", title: "Question", type: "string", validation: (Rule: any) => Rule.required() },
-    { name: "answer", title: "Answer", type: "text", validation: (Rule: any) => Rule.required() },
+    { name: "question", title: "Question", type: "string", validation: (Rule: SanityRule) => Rule.required() },
+    { name: "answer", title: "Answer", type: "text", validation: (Rule: SanityRule) => Rule.required() },
     {
       name: "category",
       title: "Category Association",
@@ -40,7 +47,7 @@ export const postSchema = {
   title: "Blog Post",
   type: "document",
   fields: [
-    { name: "title", title: "Title", type: "string", validation: (Rule: any) => Rule.required() },
+    { name: "title", title: "Title", type: "string", validation: (Rule: SanityRule) => Rule.required() },
     { name: "slug", title: "Slug", type: "slug", options: { source: "title", maxLength: 96 } },
     { name: "author", title: "Author", type: "reference", to: [{ type: "author" }] },
     { name: "mainImage", title: "Main Cover Image", type: "image", options: { hotspot: true } },
@@ -69,7 +76,7 @@ export const serviceSchema = {
   title: "Service Page",
   type: "document",
   fields: [
-    { name: "name", title: "Service Name", type: "string", validation: (Rule: any) => Rule.required() },
+    { name: "name", title: "Service Name", type: "string", validation: (Rule: SanityRule) => Rule.required() },
     { name: "slug", title: "Slug", type: "slug", options: { source: "name", maxLength: 96 } },
     { name: "title", title: "SEO Title", type: "string" },
     { name: "description", title: "Meta Description", type: "text" },
@@ -84,7 +91,7 @@ export const areaSchema = {
   title: "Area Coverage Page",
   type: "document",
   fields: [
-    { name: "name", title: "Area Name", type: "string", validation: (Rule: any) => Rule.required() },
+    { name: "name", title: "Area Name", type: "string", validation: (Rule: SanityRule) => Rule.required() },
     { name: "slug", title: "Slug", type: "slug", options: { source: "name", maxLength: 96 } },
     { name: "overview", title: "Area Overview", type: "text" },
     { name: "apartmentLiving", title: "Apartment living Context", type: "text" },
@@ -97,7 +104,7 @@ export const projectSchema = {
   title: "Project Case Study",
   type: "document",
   fields: [
-    { name: "title", title: "Project Title", type: "string", validation: (Rule: any) => Rule.required() },
+    { name: "title", title: "Project Title", type: "string", validation: (Rule: SanityRule) => Rule.required() },
     { name: "slug", title: "Slug", type: "slug", options: { source: "title", maxLength: 96 } },
     { name: "location", title: "Location in Bangalore", type: "string" },
     { name: "date", title: "Completion Date", type: "string" },

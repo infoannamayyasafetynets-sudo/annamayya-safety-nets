@@ -119,11 +119,7 @@ export default function ContactForm() {
                   </span>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <a href="tel:+916281048162" className="text-sm sm:text-base font-bold text-white hover:text-amber-200 transition-colors">
-                      +91 62810 48162 <span className="text-xs font-semibold text-amber-200">(Primary)</span>
-                    </a>
-                    <span className="text-slate-300">|</span>
-                    <a href="tel:+916281048162" className="text-sm sm:text-base font-bold text-white hover:text-amber-200 transition-colors">
-                      +91 62810 48162 <span className="text-xs font-semibold text-amber-200">(Alt)</span>
+                      +91 62810 48162 <span className="text-xs font-semibold text-amber-200">(Direct Support &amp; Instant Booking)</span>
                     </a>
                   </div>
                 </div>

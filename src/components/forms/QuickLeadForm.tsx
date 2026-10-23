@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Phone, ShieldCheck, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 import { trackFormSubmit } from "@/utils/analytics";
 
 const leadSchema = z.object({

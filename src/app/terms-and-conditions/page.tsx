@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Home, ShieldCheck, Award, HeartHandshake, CheckCircle2, Clock, FileCheck, Phone, Mail, MapPin } from "lucide-react";
+import { Home, ShieldCheck, Award, HeartHandshake, CheckCircle2, Clock, FileCheck, Phone, Mail } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/utils/schema";
 
 export const metadata: Metadata = {

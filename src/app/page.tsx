@@ -40,8 +40,8 @@ export default function Home() {
       <MarqueeTicker />
       <Stats />
       <WhyChooseUs />
-      <FeaturedServices />
       <ServiceCategories />
+      <FeaturedServices />
       <BeforeAfter />
       <Materials />
       <CostCalculator />

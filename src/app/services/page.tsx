@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, Eye, Settings, ArrowRight, Home, Sparkles } from "lucide-react";
+import { Shield, Eye, Settings, ArrowRight, Home } from "lucide-react";
 import { servicesData } from "@/utils/servicesData";
 import ServicePromoTicker from "@/components/sections/ServicePromoTicker";
 
@@ -95,14 +95,27 @@ export default function ServicesPage() {
         </div>
 
         {/* Promo Ticker */}
-        <div className="mb-14">
+        <div className="mb-10">
           <ServicePromoTicker />
+        </div>
+
+        {/* Category Jump Buttons */}
+        <div className="flex flex-wrap items-center gap-2 mb-12">
+          {categories.map((cat) => (
+            <a
+              key={cat.id}
+              href={`#${cat.id}`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-[#F57C00] text-slate-800 text-xs font-bold shadow-xs hover:shadow-md transition-all"
+            >
+              <span>{cat.name}</span>
+            </a>
+          ))}
         </div>
 
         {/* Category Blocks */}
         <div className="space-y-16">
           {categories.map((category) => (
-            <div key={category.id} className="scroll-mt-24" id={category.id}>
+            <div key={category.id} className="scroll-mt-28" id={category.id}>
               {/* Category Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-2 mb-8">
                 <div className="flex items-center gap-3">
@@ -126,9 +139,8 @@ export default function ServicesPage() {
               {/* Service Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.items.map((service) => (
-                  <Link
+                  <div
                     key={service.slug}
-                    href={`/services/${service.slug}`}
                     className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-[#F57C00] transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
@@ -141,28 +153,62 @@ export default function ServicesPage() {
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <span className="absolute bottom-3 left-4 text-xs font-black uppercase text-white bg-[#F57C00] px-2.5 py-0.5 rounded-full shadow-sm">
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                        <span className="absolute bottom-3 left-4 text-[10px] font-black uppercase text-white bg-[#F57C00] px-2.5 py-0.5 rounded-md shadow-xs">
                           {service.categoryName}
+                        </span>
+                        <span className="absolute top-3 right-3 text-[10px] font-black uppercase text-slate-950 bg-amber-300 px-2 py-0.5 rounded shadow-xs">
+                          Flat 20% OFF
+                        </span>
+                        <span className="absolute bottom-3 right-3 text-[10px] font-extrabold text-white bg-[#23272F]/90 px-2 py-0.5 rounded shadow-xs">
+                          10 Yr Warranty
                         </span>
                       </div>
 
                       {/* Content */}
                       <div className="p-5 sm:p-6">
-                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#23272F] transition-colors mb-2">
-                          {service.name}
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#F57C00] transition-colors mb-2">
+                          <Link href={`/services/${service.slug}`}>
+                            {service.name}
+                          </Link>
                         </h3>
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 mb-4">
                           {service.description}
                         </p>
                       </div>
                     </div>
 
-                    <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between text-xs font-bold text-[#23272F] group-hover:text-[#F57C00] transition-colors">
-                      <span>View Specifications &amp; Pricing</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    <div className="p-5 sm:p-6 pt-0 flex flex-col gap-2.5 border-t border-slate-100 mt-2">
+                      <div className="flex items-center justify-between pt-2">
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="text-xs font-bold text-[#23272F] group-hover:text-[#F57C00] transition-colors flex items-center gap-1"
+                        >
+                          <span>Full Specs &amp; Pricing</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                        <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                          Free Site Visit
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 pt-1">
+                        <a
+                          href="tel:6281048162"
+                          className="flex-1 bg-[#23272F] hover:bg-[#F57C00] text-white text-xs font-bold py-2 rounded-xl text-center transition-colors shadow-xs"
+                        >
+                          Call Now
+                        </a>
+                        <a
+                          href={`https://wa.me/916281048162?text=Hi%20Annamayya%20Safety%20Nets,%20I%20am%20interested%20in%20${encodeURIComponent(service.name)}%20installation%20in%20Bangalore.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-[#25D366] hover:bg-emerald-400 text-slate-950 text-xs font-black py-2 rounded-xl text-center transition-colors shadow-xs"
+                        >
+                          WhatsApp
+                        </a>
+                      </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

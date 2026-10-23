@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Sparkles, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { Sparkles, ShieldAlert } from "lucide-react";
 
 export default function BeforeAfter() {
   return (

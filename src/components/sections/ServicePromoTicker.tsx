@@ -1,7 +1,6 @@
 "use client";
 
-import { Shield, Sparkles, PhoneCall, Percent, Award, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Percent } from "lucide-react";
 
 interface ServicePromoTickerProps {
   serviceName?: string;

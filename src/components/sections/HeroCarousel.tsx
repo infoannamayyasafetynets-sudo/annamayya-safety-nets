@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, ChevronLeft, ChevronRight, Phone, MessageSquare, Award, ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, Phone, MessageSquare, ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 
 interface Slide {
   id: number;

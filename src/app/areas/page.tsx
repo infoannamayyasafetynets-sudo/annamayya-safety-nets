@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Home,
   MapPin,
-  Globe,
   ArrowRight,
   Clock,
   CheckCircle2,
@@ -15,7 +14,7 @@ import {
   Phone,
   ShieldCheck,
 } from "lucide-react";
-import { areasList, AreaDetail } from "@/utils/areasData";
+import { areasList } from "@/utils/areasData";
 import MapFrame from "@/components/ui/map-frame";
 import ServicePromoTicker from "@/components/sections/ServicePromoTicker";
 

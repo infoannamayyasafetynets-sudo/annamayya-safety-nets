@@ -3,16 +3,11 @@ import Link from "next/link";
 import {
   Home,
   MapPin,
-  Shield,
   CheckCircle2,
   Phone,
   MessageSquare,
   ArrowRight,
   Star,
-  Award,
-  Clock,
-  Layers,
-  ShieldCheck,
 } from "lucide-react";
 import { areasData } from "@/utils/areasData";
 import { servicesData } from "@/utils/servicesData";
