@@ -89,6 +89,9 @@ export const metadata: Metadata = {
       "Certified balcony safety nets, SS316 invisible wire grills & ceiling cloth drying systems based in Mathikere, Bangalore. Call +91 62810 48162.",
     images: ["/images/og-image.webp"],
   },
+  verification: {
+    google: "vy_9Z42UyUYyu3lj8eX42bhzygCoJYaHKJwSTkJyAeo",
+  },
 };
 
 export default function RootLayout({
@@ -106,6 +109,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="vy_9Z42UyUYyu3lj8eX42bhzygCoJYaHKJwSTkJyAeo"
+        />
+
         {/* LCP Hero Image Preload for 0ms render delay */}
         <link
           rel="preload"
@@ -114,8 +123,6 @@ export default function RootLayout({
           fetchPriority="high"
           type="image/webp"
         />
-
-        {/* Search Console verification: [PENDING CLIENT VERIFICATION TOKEN] */}
       </head>
       <body
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-white text-slate-900 flex flex-col min-h-screen selection:bg-[#F57C00] selection:text-white`}
